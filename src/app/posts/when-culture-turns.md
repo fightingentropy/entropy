@@ -14,6 +14,9 @@ And no, it's not because of the market. Or funding. Or headcount. Or churn.
 
 It's because culture turned on them. And worse, they helped design the very culture that turned.
 
+![Bumble stock chart showing a 92.29% decline from IPO, trading at $5.82](/images/bumble-stock.png)
+*The market's verdict: A 92% decline since IPO reflects more than financial metrics—it represents a loss of cultural relevance.*
+
 ## The Fall
 
 For a while, they played god. They gamified courtship. They industrialized gender dynamics. They wrapped it in empowerment-speak, mistaking marketing for meaning.
