@@ -31,6 +31,7 @@ To create a new article:
 ---
 title: "Your Article Title"
 date: "2023-01-01"
+author: "Erlin"
 ---
 
 Your content goes here...

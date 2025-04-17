@@ -2,6 +2,7 @@
 title: "Memory is the Deepest Moat"
 excerpt: "Everyone thought the moat in AI would be about model weights or training data. Turns out, it may just be emotional intimacy."
 date: "2024-06-14"
+author: "Erlin"
 ---
 
 # Memory is the Deepest Moat

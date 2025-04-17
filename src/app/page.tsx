@@ -19,6 +19,7 @@ export default async function Home() {
         title: data.title,
         excerpt: data.excerpt,
         date: data.date,
+        author: data.author || 'Erlin', // Default to Erlin if not specified
         slug: filename.replace(/\.md$/, ''),
       };
     })
@@ -62,6 +63,8 @@ export default async function Home() {
               fontSize: '0.9rem', 
               color: 'var(--foreground-secondary)',
             }}>
+              <span>{post.author}</span>
+              <span style={{ margin: '0 0.5rem' }}>•</span>
               <span>{formatDate(post.date)}</span>
             </div>
           </article>

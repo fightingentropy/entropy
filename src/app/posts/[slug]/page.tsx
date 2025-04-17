@@ -35,6 +35,7 @@ async function getPostData(slug: string) {
     return {
       title: data.title,
       date: data.date,
+      author: data.author || 'Erlin', // Default to Erlin if not specified
       content: contentHtml
     };
   } catch (error) {
@@ -95,6 +96,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
             borderBottom: '1px solid var(--foreground-alpha)',
             paddingBottom: '1.5rem',
           }}>
+            <span>{post.author}</span>
+            <span style={{ margin: '0 0.5rem' }}>•</span>
             <time dateTime={post.date}>
               {formatDate(post.date)}
             </time>
