@@ -8,10 +8,6 @@ import { cache } from 'react';
 import Link from 'next/link';
 import { formatDate } from '../../utils';
 
-interface PostPageProps {
-  params: Promise<{ slug: string }> | { slug: string };
-}
-
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), 'src/app/posts');
   const files = await fs.readdir(postsDir);
@@ -44,12 +40,9 @@ const getPostData = cache(async (slug: string) => {
   return { data, content }; // Return raw content
 });
 
-export default async function PostPage({ params }: PostPageProps) {
-  // Await the params object to get the slug
-  const resolvedParams = await params;
-  
+export default async function PostPage({ params }: { params: { slug: string } }) {
   // Process the data
-  const { data, content } = await getPostData(resolvedParams.slug);
+  const { data, content } = await getPostData(params.slug);
   const processedContent = await remark().use(html).process(content);
   const contentHtml = processedContent.toString();
 

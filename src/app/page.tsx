@@ -33,7 +33,7 @@ export default async function Home() {
       fontFamily: 'var(--font-geist-sans)',
     }}>
       <div>
-        {posts.map((post, index) => (
+        {posts.map((post) => (
           <article key={post.slug} style={{
             borderBottom: '1px solid var(--foreground-alpha)',
             paddingBottom: '1.5rem',
