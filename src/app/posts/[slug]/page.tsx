@@ -44,7 +44,9 @@ async function getPostData(slug: string) {
 
 // The page component
 export default async function Page({ params }: { params: { slug: string } }) {
-  const post = await getPostData(params.slug);
+  // Ensure slug is properly typed and accessed
+  const { slug } = params;
+  const post = await getPostData(slug);
   
   if (!post) {
     notFound();
