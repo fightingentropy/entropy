@@ -4,49 +4,52 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { notFound } from 'next/navigation';
-import { cache } from 'react';
 import Link from 'next/link';
 import { formatDate } from '../../utils';
 
+// Generate the static paths
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), 'src/app/posts');
   const files = await fs.readdir(postsDir);
-  // Ensure we only list files, not directories like [slug] itself
-  const mdFiles = (await Promise.all(
-    files.map(async (file) => {
-      const filePath = path.join(postsDir, file);
-      try {
-        const stat = await fs.stat(filePath);
-        return stat.isFile() && file.endsWith('.md') ? file : null;
-      } catch {
-        return null; // Handle cases where stat fails (e.g., broken symlinks)
-      }
-    })
-  )).filter((file): file is string => file !== null); // Type guard to filter out nulls
-
-  return mdFiles.map(f => ({ slug: f.replace(/\.md$/, '') }));
+  
+  const mdFiles = files.filter(file => 
+    file.endsWith('.md') && 
+    !file.startsWith('.')
+  );
+  
+  return mdFiles.map(file => ({
+    slug: file.replace(/\.md$/, '')
+  }));
 }
 
-// Cache the post data retrieval function
-const getPostData = cache(async (slug: string) => {
+// Get post data
+async function getPostData(slug: string) {
   const postPath = path.join(process.cwd(), 'src/app/posts', `${slug}.md`);
-  let fileContent;
+  
   try {
-    fileContent = await fs.readFile(postPath, 'utf8');
-  } catch {
-    notFound(); // Trigger 404 if file not found
+    const fileContent = await fs.readFile(postPath, 'utf8');
+    const { data, content } = matter(fileContent);
+    const processedContent = await remark().use(html).process(content);
+    const contentHtml = processedContent.toString();
+    
+    return {
+      title: data.title,
+      date: data.date,
+      content: contentHtml
+    };
+  } catch (error) {
+    notFound();
   }
-  const { data, content } = matter(fileContent);
-  return { data, content }; // Return raw content
-});
+}
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  // Process the data
-  const { data, content } = await getPostData(params.slug);
-  const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString();
-
-  // Return JSX
+// The page component
+export default async function Page({ params }: { params: { slug: string } }) {
+  const post = await getPostData(params.slug);
+  
+  if (!post) {
+    notFound();
+  }
+  
   return (
     <main style={{
       maxWidth: '680px',
@@ -80,7 +83,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
             marginBottom: '1rem',
             color: 'var(--foreground)',
           }}>
-            {data.title}
+            {post.title}
           </h1>
           <div style={{
             fontSize: '0.95rem',
@@ -90,8 +93,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
             borderBottom: '1px solid var(--foreground-alpha)',
             paddingBottom: '1.5rem',
           }}>
-            <time dateTime={data.date}>
-              {formatDate(data.date)}
+            <time dateTime={post.date}>
+              {formatDate(post.date)}
             </time>
           </div>
         </header>
@@ -102,7 +105,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
             lineHeight: 1.7,
             color: 'var(--foreground)',
           }} 
-          dangerouslySetInnerHTML={{ __html: contentHtml }} 
+          dangerouslySetInnerHTML={{ __html: post.content }} 
           className="prose"
         />
         
