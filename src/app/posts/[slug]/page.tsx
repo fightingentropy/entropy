@@ -44,9 +44,9 @@ async function getPostData(slug: string) {
 
 // The page component
 export default async function Page({ params }: { params: { slug: string } }) {
-  // Ensure slug is properly typed and accessed
-  const { slug } = params;
-  const post = await getPostData(slug);
+  // Explicit workaround for Next.js dev warning
+  const resolvedParams = await Promise.resolve(params);
+  const post = await getPostData(resolvedParams.slug);
   
   if (!post) {
     notFound();
