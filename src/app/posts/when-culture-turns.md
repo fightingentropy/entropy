@@ -1,6 +1,6 @@
 ---
 title: "When Culture Turns"
-date: "2024-06-12"
+date: "2025-01-15"
 author: "Erlin"
 excerpt: "The collapse of Bumble demonstrates how a product dies not when features fail, but when they stop making people feel."
 ---
