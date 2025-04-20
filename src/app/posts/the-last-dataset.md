@@ -1,5 +1,6 @@
 ---
-title: "The Last Dataset: Why ChatGPT Is Building the Most Insane & Valuable Map of Humanity Ever Created"
+title: "The Last Dataset"
+excerpt: "Why ChatGPT Is Building the Most Insane & Valuable Map of Humanity Ever Created"
 date: "2023-12-01"
 author: "Erlin"
 ---
