@@ -2,6 +2,8 @@
 
 A minimal blog built with Next.js.
 
+Website: [fightingentropy.org](https://fightingentropy.org)
+
 ## Getting Started
 
 Run the development server:
