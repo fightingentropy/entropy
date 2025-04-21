@@ -1,6 +1,7 @@
 ---
-title: "The Dark Side of Trend Investing: Profiting from Digital Escapism"
-date: "2023-12-15"
+title: "The Dark Side of Trend Investing"
+excerpt: "Profiting from digital escapism."
+date: "2023-12-01"
 author: "Erlin"
 ---
 
