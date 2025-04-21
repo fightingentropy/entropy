@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import NavMenu from "./components/NavMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,10 +45,7 @@ export default function RootLayout({
           }}>
             Entropy
           </Link>
-          <div style={{ display: 'flex', gap: '2rem', fontSize: '1.1rem' }}>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
+          <NavMenu />
         </nav>
         {children}
       </body>
