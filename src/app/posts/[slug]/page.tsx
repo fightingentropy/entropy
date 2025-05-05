@@ -22,6 +22,14 @@ export async function generateStaticParams() {
   }));
 }
 
+// Function to make links open in new tabs and apply custom styling
+function addTargetBlankToLinks(content: string): string {
+  return content.replace(
+    /<a\s+href="(https?:\/\/[^"]+)">/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-style: italic; text-decoration: none; border-bottom: 1px solid rgba(128, 128, 128, 0.4); padding-bottom: 1px;">'
+  );
+}
+
 // Get post data
 async function getPostData(slug: string) {
   const postPath = path.join(process.cwd(), 'src/app/posts', `${slug}.md`);
@@ -30,7 +38,10 @@ async function getPostData(slug: string) {
     const fileContent = await fs.readFile(postPath, 'utf8');
     const { data, content } = matter(fileContent);
     const processedContent = await remark().use(html).process(content);
-    const contentHtml = processedContent.toString();
+    let contentHtml = processedContent.toString();
+    
+    // Add target="_blank" to all external links
+    contentHtml = addTargetBlankToLinks(contentHtml);
     
     return {
       title: data.title,
