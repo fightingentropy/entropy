@@ -34,6 +34,20 @@ export default function AboutPage() {
           View HyperLiquid Vault
         </a>
       </div>
+      
+      <div style={{ marginTop: '3rem', width: '100%', maxWidth: '600px' }}>
+        <h2 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '1rem', textAlign: 'center' }}>There is no second best</h2>
+        <div style={{ width: '100%', borderRadius: '8px', overflow: 'hidden' }}>
+          <video
+            controls
+            width="100%"
+            style={{ borderRadius: '8px' }}
+          >
+            <source src="/saylor_baby.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
     </main>
   );
 } 
