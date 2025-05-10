@@ -1,7 +1,7 @@
 ---
 title: "Female Dynamics: A Raw Dissection"
-excerpt: "A stark examination of Heartiste's 'Success with women is more disillusioning than failure,' using unfiltered examples to expose the often brutal realities of intergender dynamics and female nature."
-date: "2025-05-03"
+excerpt: '"Success with women is more disillusioning than failure" - Heartiste'
+date: "2025-04-30"
 author: "Erlin"
 ---
 
