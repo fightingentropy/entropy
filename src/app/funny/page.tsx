@@ -28,15 +28,15 @@ export default function FunnyPage() {
         marginBottom: '1.5rem',
         letterSpacing: '-0.02em',
       }}>
-        Theo Von Can't Swim
+        Turn off: Can't Swim
       </h1>
       
       <div style={{
         position: 'relative',
-        width: '100%',
-        maxHeight: '80vh',
+        width: '70%',
+        maxWidth: '600px',
+        margin: '0 auto',
         borderRadius: '8px',
-        overflow: 'hidden',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
       }}>
         <video 
@@ -46,6 +46,7 @@ export default function FunnyPage() {
             width: '100%',
             height: 'auto',
             display: 'block',
+            borderRadius: '8px',
           }}
         >
           <source src="/theo von can't swim.mp4" type="video/mp4" />
