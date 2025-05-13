@@ -21,10 +21,15 @@ export default async function Home() {
         date: data.date,
         author: data.author || 'Erlin', // Default to Erlin if not specified
         slug: filename.replace(/\.md$/, ''),
+        private: data.private || false, // Add support for private flag
       };
     })
   );
-  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  // Filter out private posts and sort by date
+  const publicPosts = posts
+    .filter(post => !post.private)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <main style={{
@@ -34,7 +39,7 @@ export default async function Home() {
       fontFamily: 'var(--font-geist-sans)',
     }}>
       <div>
-        {posts.map((post) => (
+        {publicPosts.map((post) => (
           <article key={post.slug} style={{
             borderBottom: '1px solid var(--foreground-alpha)',
             paddingBottom: '1.5rem',

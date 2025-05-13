@@ -47,7 +47,8 @@ async function getPostData(slug: string) {
       title: data.title,
       date: data.date,
       author: data.author || 'Erlin', // Default to Erlin if not specified
-      content: contentHtml
+      content: contentHtml,
+      private: data.private || false,
     };
   } catch (error) {
     notFound();
@@ -98,6 +99,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
             color: 'var(--foreground)',
           }}>
             {post.title}
+            {post.private && (
+              <span style={{
+                display: 'inline-block',
+                fontSize: '0.9rem',
+                fontWeight: 'normal',
+                color: 'var(--foreground-secondary)',
+                backgroundColor: 'rgba(0,0,0,0.1)',
+                padding: '0.25rem 0.5rem',
+                borderRadius: '4px',
+                marginLeft: '1rem',
+                verticalAlign: 'middle',
+              }}>
+                Private
+              </span>
+            )}
           </h1>
           <div style={{
             fontSize: '0.95rem',

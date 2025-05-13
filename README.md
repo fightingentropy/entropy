@@ -32,6 +32,7 @@ To create a new article:
 ```markdown
 ---
 title: "Your Article Title"
+excerpt: "A brief description of your article"
 date: "2023-01-01"
 author: "Erlin"
 ---
@@ -41,3 +42,24 @@ Your content goes here...
 
 3. Write your content using Markdown syntax
 4. Save the file - it will automatically appear in the blog
+
+## Making Posts Private
+
+To make a post private (not visible on the homepage but still accessible via direct URL):
+
+1. Add `private: true` to the front matter of the post:
+
+```markdown
+---
+title: "Your Private Article Title"
+excerpt: "A brief description of your article"
+date: "2023-01-01"
+author: "Erlin"
+private: true
+---
+```
+
+Private posts:
+- Won't appear on the homepage
+- Can still be accessed by direct URL (/posts/your-post-slug)
+- Will display a "Private" label next to their title
