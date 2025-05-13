@@ -1,19 +1,27 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function FunnyPage() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const swimVideoRef = useRef<HTMLVideoElement>(null);
+  const chineseVideoRef = useRef<HTMLVideoElement>(null);
+  const koreansVideoRef = useRef<HTMLVideoElement>(null);
 
-  // Auto-play the video when the component mounts
-  useEffect(() => {
-    if (videoRef.current) {
-      // We need to catch potential auto-play restrictions errors
-      videoRef.current.play().catch(error => {
-        console.log("Auto-play prevented:", error);
-      });
-    }
-  }, []);
+  const videoContainerStyle = {
+    position: 'relative' as const,
+    width: '70%',
+    maxWidth: '600px',
+    margin: '2rem auto',
+    borderRadius: '8px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+  };
+
+  const videoStyle = {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+    borderRadius: '8px',
+  };
 
   return (
     <main style={{
@@ -27,29 +35,67 @@ export default function FunnyPage() {
         fontWeight: 600, 
         marginBottom: '1.5rem',
         letterSpacing: '-0.02em',
+        textAlign: 'center',
       }}>
-        Turn off: Can't Swim
+        Theo Von Highlights
       </h1>
       
-      <div style={{
-        position: 'relative',
-        width: '70%',
-        maxWidth: '600px',
-        margin: '0 auto',
-        borderRadius: '8px',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-      }}>
+      {/* First video - Can't Swim */}
+      <div style={videoContainerStyle}>
+        <h2 style={{ 
+          fontSize: '1.5rem', 
+          fontWeight: 600, 
+          marginBottom: '1rem',
+          letterSpacing: '-0.02em',
+        }}>
+          Turn off: Can't Swim
+        </h2>
         <video 
-          ref={videoRef}
+          ref={swimVideoRef}
           controls
-          style={{
-            width: '100%',
-            height: 'auto',
-            display: 'block',
-            borderRadius: '8px',
-          }}
+          style={videoStyle}
         >
           <source src="/theo von can't swim.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      {/* Second video - Chinese */}
+      <div style={videoContainerStyle}>
+        <h2 style={{ 
+          fontSize: '1.5rem', 
+          fontWeight: 600, 
+          marginBottom: '1rem',
+          letterSpacing: '-0.02em',
+        }}>
+          Chinese
+        </h2>
+        <video 
+          ref={chineseVideoRef}
+          controls
+          style={videoStyle}
+        >
+          <source src="/theo von chinese.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      {/* Third video - Koreans */}
+      <div style={videoContainerStyle}>
+        <h2 style={{ 
+          fontSize: '1.5rem', 
+          fontWeight: 600, 
+          marginBottom: '1rem',
+          letterSpacing: '-0.02em',
+        }}>
+          Koreans
+        </h2>
+        <video 
+          ref={koreansVideoRef}
+          controls
+          style={videoStyle}
+        >
+          <source src="/theo von koreans.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
