@@ -8,7 +8,7 @@ private: true
 
 # ⚠️ THIS ARTICLE IS A WORK IN PROGRESS (WIP) ⚠️
 
-<!-- ![Coffee Date Facade](/images/women_1.png) -->
+![Coffee Date Facade](/images/women_1.png)
 
 
-<!-- ![The Itch](/images/women_2.png) -->
+![The Itch](/images/women_2.png)
