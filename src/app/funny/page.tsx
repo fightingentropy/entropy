@@ -6,6 +6,7 @@ export default function FunnyPage() {
   const swimVideoRef = useRef<HTMLVideoElement>(null);
   const chineseVideoRef = useRef<HTMLVideoElement>(null);
   const koreansVideoRef = useRef<HTMLVideoElement>(null);
+  const scamVideoRef = useRef<HTMLVideoElement>(null);
 
   const videoContainerStyle = {
     position: 'relative' as const,
@@ -96,6 +97,26 @@ export default function FunnyPage() {
           style={videoStyle}
         >
           <source src="/theo von koreans.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      {/* Fourth video - Scam Yong Un */}
+      <div style={videoContainerStyle}>
+        <h2 style={{ 
+          fontSize: '1.5rem', 
+          fontWeight: 600, 
+          marginBottom: '1rem',
+          letterSpacing: '-0.02em',
+        }}>
+          Scam Yong Un
+        </h2>
+        <video 
+          ref={scamVideoRef}
+          controls
+          style={videoStyle}
+        >
+          <source src="/Scam Yong Un.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
