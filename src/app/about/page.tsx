@@ -14,26 +14,6 @@ export default function AboutPage() {
       <p style={{ fontSize: '1.3rem', opacity: 0.8, textAlign: 'center', maxWidth: 600, lineHeight: 1.6 }}>
         In a world of constant change, entropy is unavoidable. This blog embraces the chaos, finding clarity in complexity and meaning in disorder. Here, we explore ideas that challenge the expected and celebrate the unpredictable nature of technology, design, and human experience.
       </p>
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-        <p style={{ fontSize: '1.1rem', opacity: 0.8, marginBottom: '0.5rem' }}>Follow my trading experiments:</p>
-        <a 
-          href="https://app.hyperliquid.xyz/vaults/0x3bba58870898540593bf0e15ff456a84f9482457" 
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ 
-            display: 'inline-block',
-            padding: '0.5rem 1rem',
-            background: '#222',
-            color: '#fff',
-            borderRadius: '4px',
-            textDecoration: 'none',
-            fontWeight: 500,
-            transition: 'all 0.2s ease'
-          }}
-        >
-          View HyperLiquid Vault
-        </a>
-      </div>
       
       <div style={{ marginTop: '3rem', width: '100%', maxWidth: '600px' }}>
         <h2 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '1rem', textAlign: 'center' }}>There is no second best</h2>
