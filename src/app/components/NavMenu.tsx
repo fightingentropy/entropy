@@ -106,10 +106,24 @@ export default function NavMenu() {
               padding: '1.25rem 1.75rem',
               color: 'var(--foreground)',
               textDecoration: 'none',
+              borderBottom: '1px solid var(--foreground-alpha)',
               fontSize: '1.1rem'
             }}
           >
             Funny
+          </Link>
+          <Link 
+            href="/quotes" 
+            onClick={closeMenu}
+            style={{
+              display: 'block',
+              padding: '1.25rem 1.75rem',
+              color: 'var(--foreground)',
+              textDecoration: 'none',
+              fontSize: '1.1rem'
+            }}
+          >
+            Quotes
           </Link>
         </div>
       )}
