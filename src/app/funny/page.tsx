@@ -1,29 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import LazyVideo from "../components/LazyVideo";
 
 export default function FunnyPage() {
-  const swimVideoRef = useRef<HTMLVideoElement>(null);
-  const chineseVideoRef = useRef<HTMLVideoElement>(null);
-  const koreansVideoRef = useRef<HTMLVideoElement>(null);
-  const scamVideoRef = useRef<HTMLVideoElement>(null);
-
-  const videoContainerStyle = {
-    position: 'relative' as const,
-    width: '70%',
-    maxWidth: '600px',
-    margin: '2rem auto',
-    borderRadius: '8px',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-  };
-
-  const videoStyle = {
-    width: '100%',
-    height: 'auto',
-    display: 'block',
-    borderRadius: '8px',
-  };
-
   return (
     <main style={{
       maxWidth: '800px',
@@ -41,85 +20,25 @@ export default function FunnyPage() {
         Theo Von Highlights
       </h1>
       
-      {/* First video - Can't Swim */}
-      <div style={videoContainerStyle}>
-        <h2 style={{ 
-          fontSize: '1.5rem', 
-          fontWeight: 600, 
-          marginBottom: '1rem',
-          letterSpacing: '-0.02em',
-        }}>
-          Turn off: Can't Swim
-        </h2>
-        <video 
-          ref={swimVideoRef}
-          controls
-          style={videoStyle}
-        >
-          <source src="/theo von can't swim.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <LazyVideo 
+        src="/theo von can't swim.mp4"
+        title="Turn off: Can't Swim"
+      />
       
-      {/* Second video - Chinese */}
-      <div style={videoContainerStyle}>
-        <h2 style={{ 
-          fontSize: '1.5rem', 
-          fontWeight: 600, 
-          marginBottom: '1rem',
-          letterSpacing: '-0.02em',
-        }}>
-          Chinese
-        </h2>
-        <video 
-          ref={chineseVideoRef}
-          controls
-          style={videoStyle}
-        >
-          <source src="/theo von chinese.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <LazyVideo 
+        src="/theo von chinese.mp4"
+        title="Chinese"
+      />
       
-      {/* Third video - Koreans */}
-      <div style={videoContainerStyle}>
-        <h2 style={{ 
-          fontSize: '1.5rem', 
-          fontWeight: 600, 
-          marginBottom: '1rem',
-          letterSpacing: '-0.02em',
-        }}>
-          Koreans
-        </h2>
-        <video 
-          ref={koreansVideoRef}
-          controls
-          style={videoStyle}
-        >
-          <source src="/theo von koreans.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <LazyVideo 
+        src="/theo von koreans.mp4"
+        title="Koreans"
+      />
       
-      {/* Fourth video - Scam Yong Un */}
-      <div style={videoContainerStyle}>
-        <h2 style={{ 
-          fontSize: '1.5rem', 
-          fontWeight: 600, 
-          marginBottom: '1rem',
-          letterSpacing: '-0.02em',
-        }}>
-          Scam Yong Un
-        </h2>
-        <video 
-          ref={scamVideoRef}
-          controls
-          style={videoStyle}
-        >
-          <source src="/Scam Yong Un.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <LazyVideo 
+        src="/Scam Yong Un.mp4"
+        title="Scam Yong Un"
+      />
     </main>
   );
 } 
