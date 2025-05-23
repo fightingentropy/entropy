@@ -51,10 +51,14 @@ export default function LazyVideo({
   };
 
   const defaultContainerStyle = {
-    position: 'relative' as const,
     width: '70%',
     maxWidth: '600px',
-    margin: '2rem auto',
+    margin: '3rem auto 2rem auto', // Increased top margin for better spacing
+    ...containerStyle
+  };
+
+  const videoContainerStyle = {
+    position: 'relative' as const,
     borderRadius: '8px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
     minHeight: '200px', // Prevent layout shift
@@ -62,7 +66,7 @@ export default function LazyVideo({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#f5f5f5',
-    ...containerStyle
+    overflow: 'hidden',
   };
 
   const defaultVideoStyle = {
@@ -84,65 +88,66 @@ export default function LazyVideo({
   };
 
   return (
-    <div ref={containerRef} style={defaultContainerStyle}>
+    <div style={defaultContainerStyle}>
       <h2 style={{ 
-        position: 'absolute',
-        top: '-3rem',
-        left: 0,
         fontSize: '1.5rem', 
         fontWeight: 600, 
-        marginBottom: '1rem',
+        marginBottom: '1.5rem', // Increased bottom margin
         letterSpacing: '-0.02em',
+        textAlign: 'left',
+        color: 'var(--foreground)',
       }}>
         {title}
       </h2>
       
-      {hasError ? (
-        <div style={placeholderStyle}>
-          <div>❌ Error loading video</div>
-          <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>
-            "{title}" could not be loaded
-          </div>
-        </div>
-      ) : !isIntersecting ? (
-        <div style={placeholderStyle}>
-          <div>📹 Video loading...</div>
-          <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>
-            {title}
-          </div>
-        </div>
-      ) : (
-        <>
-          {!isLoaded && (
-            <div style={{
-              ...placeholderStyle,
-              position: 'absolute',
-              backgroundColor: 'rgba(245, 245, 245, 0.9)',
-              width: '100%',
-              height: '100%',
-              borderRadius: '8px',
-            }}>
-              <div>⏳ Loading video...</div>
+      <div ref={containerRef} style={videoContainerStyle}>
+        {hasError ? (
+          <div style={placeholderStyle}>
+            <div>❌ Error loading video</div>
+            <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>
+              "{title}" could not be loaded
             </div>
-          )}
-          <video 
-            ref={videoRef}
-            controls
-            preload="metadata"
-            style={{
-              ...defaultVideoStyle,
-              opacity: isLoaded ? 1 : 0,
-              transition: 'opacity 0.3s ease'
-            }}
-            onLoadedData={handleVideoLoad}
-            onError={handleVideoError}
-            aria-label={`Video: ${title}`}
-          >
-            <source src={src} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </>
-      )}
+          </div>
+        ) : !isIntersecting ? (
+          <div style={placeholderStyle}>
+            <div>📹 Video loading...</div>
+            <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>
+              {title}
+            </div>
+          </div>
+        ) : (
+          <>
+            {!isLoaded && (
+              <div style={{
+                ...placeholderStyle,
+                position: 'absolute',
+                backgroundColor: 'rgba(245, 245, 245, 0.9)',
+                width: '100%',
+                height: '100%',
+                borderRadius: '8px',
+              }}>
+                <div>⏳ Loading video...</div>
+              </div>
+            )}
+            <video 
+              ref={videoRef}
+              controls
+              preload="metadata"
+              style={{
+                ...defaultVideoStyle,
+                opacity: isLoaded ? 1 : 0,
+                transition: 'opacity 0.3s ease'
+              }}
+              onLoadedData={handleVideoLoad}
+              onError={handleVideoError}
+              aria-label={`Video: ${title}`}
+            >
+              <source src={src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </>
+        )}
+      </div>
     </div>
   );
 } 

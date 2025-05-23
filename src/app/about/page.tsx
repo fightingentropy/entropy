@@ -1,3 +1,5 @@
+import LazyVideo from "../components/LazyVideo";
+
 export default function AboutPage() {
   return (
     <main style={{
@@ -15,18 +17,16 @@ export default function AboutPage() {
         In a world of constant change, entropy is unavoidable. This blog embraces the chaos, finding clarity in complexity and meaning in disorder. Here, we explore ideas that challenge the expected and celebrate the unpredictable nature of technology, design, and human experience.
       </p>
       
-      <div style={{ marginTop: '3rem', width: '100%', maxWidth: '600px' }}>
-        <h2 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '1rem', textAlign: 'center' }}>There is no second best</h2>
-        <div style={{ width: '100%', borderRadius: '8px', overflow: 'hidden' }}>
-          <video
-            controls
-            width="100%"
-            style={{ borderRadius: '8px' }}
-          >
-            <source src="/saylor_baby.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      <div style={{ marginTop: '2rem', width: '100%', maxWidth: '600px' }}>
+        <LazyVideo 
+          src="/saylor_baby.mp4"
+          title="There is no second best"
+          containerStyle={{
+            width: '100%',
+            maxWidth: '600px',
+            margin: '0 auto',
+          }}
+        />
       </div>
     </main>
   );
