@@ -11,6 +11,10 @@ const videos = [
   {
     src: "/videos/prompt_theory.mp4",
     title: "Prompt Theory"
+  },
+  {
+    src: "/videos/puppramin.mp4",
+    title: "Puppramin"
   }
 ];
 
