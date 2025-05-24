@@ -7,13 +7,15 @@ interface LazyVideoProps {
   title: string;
   containerStyle?: React.CSSProperties;
   videoStyle?: React.CSSProperties;
+  playing?: boolean;
 }
 
 export default function LazyVideo({ 
   src, 
   title, 
   containerStyle = {},
-  videoStyle = {} 
+  videoStyle = {},
+  playing = false
 }: LazyVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -41,6 +43,17 @@ export default function LazyVideo({
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!isIntersecting) return;
+    if (videoRef.current) {
+      if (playing) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [playing, isIntersecting]);
 
   const handleVideoLoad = () => {
     setIsLoaded(true);
