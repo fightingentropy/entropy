@@ -21,7 +21,7 @@ export default function AIPage() {
       </h1>
       
       <LazyVideo 
-        src="/We're so cooked, chat. This is going to one-shot Facebook Mom turbo normies. They have no idea what's coming. They're about to be gigafried with A5 Wagyu AI slop..mp4"
+        src="/videos/We're so cooked, chat. This is going to one-shot Facebook Mom turbo normies. They have no idea what's coming. They're about to be gigafried with A5 Wagyu AI slop..mp4"
         title="We're so cooked"
         containerStyle={{ maxWidth: '900px', width: '100%', margin: '3rem auto 2rem auto' }}
       />

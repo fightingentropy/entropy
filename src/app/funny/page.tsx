@@ -5,19 +5,19 @@ import { useRef, useEffect, useState } from "react";
 
 const videos = [
   {
-    src: "/theo von can't swim.mp4",
+    src: "/videos/theo von can't swim.mp4",
     title: "Turn off: Can't Swim"
   },
   {
-    src: "/theo von chinese.mp4",
+    src: "/videos/theo von chinese.mp4",
     title: "Chinese"
   },
   {
-    src: "/theo von koreans.mp4",
+    src: "/videos/theo von koreans.mp4",
     title: "Koreans"
   },
   {
-    src: "/Scam Yong Un.mp4",
+    src: "/videos/Scam Yong Un.mp4",
     title: "Scam Yong Un"
   }
 ];

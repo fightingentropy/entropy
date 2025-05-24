@@ -21,7 +21,14 @@ export default function QuotesPage() {
       </h1>
       
       <LazyVideo 
-        src="/saylor_apple.mp4"
+        src="/videos/bitcoin or saylor babay.mp4"
+        title="Bitcoin or Saylor Babay"
+        containerStyle={{
+          margin: '0 auto 2.5rem auto',
+        }}
+      />
+      <LazyVideo 
+        src="/videos/saylor_apple.mp4"
         title="Apple & Bitcoin"
         containerStyle={{
           margin: '0 auto',
