@@ -73,7 +73,7 @@ export default function FunnyPage() {
             <LazyVideo
               src={video.src}
               title={video.title}
-              containerStyle={{ maxWidth: '900px', width: '100%', margin: 0 }}
+              containerStyle={{ maxWidth: '900px', width: '100%', margin: 0, marginTop: '-10vh' }}
               videoStyle={{ maxHeight: '70vh', width: '100%' }}
               playing={activeIdx === idx}
             />
