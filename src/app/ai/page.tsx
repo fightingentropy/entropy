@@ -19,6 +19,10 @@ const videos = [
   {
     src: "/videos/puppramin.mp4",
     title: "Puppramin"
+  },
+  {
+    src: "/videos/This is brilliant. They nailed almost every single influencer archetype. God help us all 💀.mp4",
+    title: "Influencer Archetypes"
   }
 ];
 
