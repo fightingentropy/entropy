@@ -1,11 +1,8 @@
-import { promises as fs } from "fs";
-import path from "path";
 import TweetGrid from "./TweetGrid";
+import { tweets } from "@/data/tweets";
 
 async function getTweets() {
-  const filePath = path.join(process.cwd(), "src/data/tweets.json");
-  const fileContents = await fs.readFile(filePath, "utf8");
-  return JSON.parse(fileContents);
+  return tweets;
 }
 
 export default async function TweetsPage() {
