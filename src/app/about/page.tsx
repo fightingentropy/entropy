@@ -19,8 +19,8 @@ export default function AboutPage() {
       
       <div style={{ marginTop: '2rem', width: '100%', maxWidth: '600px' }}>
         <LazyVideo 
-          src="/videos/saylor_baby.mp4"
-          title="There is no second best"
+          src="/videos/bitcoin or saylor babay.mp4"
+          title="The is no second best"
           containerStyle={{
             width: '100%',
             maxWidth: '600px',
