@@ -6,6 +6,11 @@ interface Tweet {
 
 export const tweets: Tweet[] = [
   {
+    url: 'https://x.com/kunalgoel/status/1862449297905574002',
+    author: 'kunalgoel',
+    id: '1862449297905574002'
+  },
+  {
     url: 'https://x.com/cobie/status/1928154469398892821',
     author: 'cobie',
     id: '1928154469398892821'
