@@ -1,11 +1,11 @@
 ---
-title: "The Power of Contention: Why Pushback Fuels Big Ideas"
+title: "The Contrarian's Edge: Why Pushback Points to Potential"
 excerpt: "Contention is necessary for outsized returns and breakthrough innovation. When an idea is immediately accepted by everyone, its potential upside is already diminished."
 date: "2025-04-05"
 author: "Erlin"
 ---
 
-# The Power of Contention: Why Pushback Fuels Big Ideas
+# The Contrarian's Edge: Why Pushback Points to Potential
 
 In a world increasingly driven by consensus, it's easy to overlook a fundamental truth: **contention is necessary for outsized returns and breakthrough innovation**. When an idea is immediately accepted by everyone, its potential upside is already diminished—priced in by early adoption, overexposure, or diluted novelty. The path to transformative value lies in the shadows of disagreement.
 
