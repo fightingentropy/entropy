@@ -69,18 +69,97 @@ Conversely, low trust imposes steep costs: if people expect cheating or incompet
 
 Such differences translate into divergent outcomes in governance, economic prosperity, and social peace, as summarized in Table 1.
 
-### Table 1: Characteristics of High-Trust vs. Low-Trust Societies
+### Characteristics of High-Trust vs. Low-Trust Societies
 
-| Dimension | High-Trust Society | Low-Trust Society |
-|-----------|-------------------|-------------------|
-| Generalized Social Trust | High levels of interpersonal trust; a majority believe "most people can be trusted." e.g. ~60% in Scandinavia [ourworldindata.org](https://ourworldindata.org/trust) | Low levels of interpersonal trust; most people fear others will exploit them. e.g. <10% in parts of Latin America [ourworldindata.org](https://ourworldindata.org/trust) |
-| Scope of Trust ("Trust Radius") | Broad radius of trust extending beyond kin and friends to strangers and out-groups. People readily form associations with non-kin [minneapolisfed.org](https://www.minneapolisfed.org/article/1995/trust-the-social-virtues-and-the-creation-of-prosperity) | Narrow trust focused on family or clan; suspicion of those outside one's in-group. Difficulty forming cooperation beyond kin networks [minneapolisfed.org](https://www.minneapolisfed.org/article/1995/trust-the-social-virtues-and-the-creation-of-prosperity) |
-| Institutional Quality | Transparent, accountable institutions; low corruption and impartial rule of law. Citizens trust authorities to act in the public interest [gu.se](https://www.gu.se/sites/default/files/2020-05/2020_1_Holmberg_Rothstein.pdf) | Weak institutions and prevalent corruption. Nepotism and patronage are common, reinforcing public mistrust of government [gu.se](https://www.gu.se/sites/default/files/2020-05/2020_1_Holmberg_Rothstein.pdf) |
-| Economic Organization | Large-scale enterprises and vibrant markets enabled by trust. Low transaction costs, high innovation and investment [minneapolisfed.org](https://www.minneapolisfed.org/article/1995/trust-the-social-virtues-and-the-creation-of-prosperity). Contracts often enforced informally given mutual confidence. | Fragmented, family-centered businesses dominate due to lack of trust in outsiders [minneapolisfed.org](https://www.minneapolisfed.org/article/1995/trust-the-social-virtues-and-the-creation-of-prosperity). High transaction costs (legalism, enforcement) and reduced investment. Informal and black-market transactions fill the trust gap. |
-| Social Capital & Civic Life | Strong civic engagement and dense networks of community groups (clubs, associations, unions). Norms of reciprocity encourage volunteering and collective problem-solving [gu.se](https://www.gu.se/sites/default/files/2020-05/2020_1_Holmberg_Rothstein.pdf) | Weak civic engagement; few effective civil society organizations outside kin or patronage groups. Limited cooperation for community initiatives. Social mistrust discourages volunteering. |
-| Social Norms and Values | Emphasis on honesty, reciprocity, and concern for the common good. Ethical norms are internalized, making most people behave trustworthily even without external enforcement [minneapolisfed.org](https://www.minneapolisfed.org/article/1995/trust-the-social-virtues-and-the-creation-of-prosperity) | Norms of loyalty confined to the in-group; endemic skepticism. Amoral familialism can prevail (people feel moral obligations only to family) [en.wikipedia.org](https://en.wikipedia.org/wiki/Trust_(social_science)). Public interest is undermined by fear that "others will cheat," leading to a self-fulfilling prophecy of low trust. |
-| Governance and Stability | Stable democracy with high civic participation. Trust creates a reservoir of goodwill that helps resolve conflicts peacefully. Governance is responsive, enjoying broad legitimacy [en.wikipedia.org](https://en.wikipedia.org/wiki/Trust_(social_science)) | Unstable or authoritarian-leaning politics. Low trust in society breeds polarization or apathy. Governments often lack legitimacy, and conflicts or crime rates are higher due to social fractionalization. |
-| Quality of Life Outcomes | Higher levels of happiness, life satisfaction, and social cohesion. For example, Nordic high-trust countries rank atop global happiness indices, aided by citizens' mutual trust [gu.se](https://www.gu.se/sites/default/files/2020-05/2020_1_Holmberg_Rothstein.pdf). Public goods (education, health, infrastructure) are well-provisioned as people support collective welfare. | Lower subjective well-being and social cohesion. Mistrust leads to stress and isolation. Public services and welfare may suffer as citizens evade taxes or elites capture resources. High inequality and social stratification often correlate with low trust [ourworldindata.org](https://ourworldindata.org/trust) |
+#### Generalized Social Trust
+- **High-Trust Society:**
+  - High levels of interpersonal trust
+  - Majority believe "most people can be trusted" (~60% in Scandinavia)
+- **Low-Trust Society:**
+  - Low levels of interpersonal trust
+  - Most people fear exploitation (<10% in parts of Latin America)
+
+#### Scope of Trust ("Trust Radius")
+- **High-Trust Society:**
+  - Broad radius extending beyond kin
+  - Readily form associations with non-kin
+  - Trust extends to out-groups
+- **Low-Trust Society:**
+  - Narrow trust focused on family/clan
+  - Suspicion of those outside in-group
+  - Difficulty cooperating beyond kin networks
+
+#### Institutional Quality
+- **High-Trust Society:**
+  - Transparent, accountable institutions
+  - Low corruption
+  - Impartial rule of law
+  - Citizens trust authorities
+- **Low-Trust Society:**
+  - Weak institutions
+  - Prevalent corruption
+  - Nepotism and patronage common
+  - Public mistrust of government
+
+#### Economic Organization
+- **High-Trust Society:**
+  - Large-scale enterprises enabled by trust
+  - Low transaction costs
+  - High innovation and investment
+  - Informal contract enforcement
+- **Low-Trust Society:**
+  - Family-centered businesses dominate
+  - High transaction costs
+  - Reduced investment
+  - Informal/black-market transactions common
+
+#### Social Capital & Civic Life
+- **High-Trust Society:**
+  - Strong civic engagement
+  - Dense networks of community groups
+  - Norms of reciprocity
+  - Active volunteering
+- **Low-Trust Society:**
+  - Weak civic engagement
+  - Few effective civil society organizations
+  - Limited community cooperation
+  - Low volunteering rates
+
+#### Social Norms and Values
+- **High-Trust Society:**
+  - Emphasis on honesty and reciprocity
+  - Concern for common good
+  - Internalized ethical norms
+  - Trustworthy behavior without enforcement
+- **Low-Trust Society:**
+  - Loyalty confined to in-group
+  - Endemic skepticism
+  - Amoral familialism
+  - Self-fulfilling prophecy of low trust
+
+#### Governance and Stability
+- **High-Trust Society:**
+  - Stable democracy
+  - High civic participation
+  - Peaceful conflict resolution
+  - Responsive governance
+- **Low-Trust Society:**
+  - Unstable/authoritarian politics
+  - Low trust breeds polarization
+  - Governments lack legitimacy
+  - Higher conflict/crime rates
+
+#### Quality of Life Outcomes
+- **High-Trust Society:**
+  - Higher happiness and satisfaction
+  - Strong social cohesion
+  - Well-provisioned public goods
+  - Support for collective welfare
+- **Low-Trust Society:**
+  - Lower subjective well-being
+  - Weak social cohesion
+  - Poor public services
+  - High inequality and stratification
 
 Table 1: A comparison of typical characteristics and outcomes in high-trust versus low-trust societies. High trust tends to correlate with effective institutions, economic prosperity, and social cohesion, whereas low trust societies face challenges of corruption, underdevelopment, and social fragmentation.
 
