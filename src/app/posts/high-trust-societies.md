@@ -1,11 +1,11 @@
 ---
-title: "High Trust Societies: A Multidisciplinary Analysis of Emergence, Stability, and Consequences"
+title: "High Trust Societies"
 excerpt: "An in-depth exploration of how trust shapes societies, from its psychological foundations to its impact on governance, economics, and social cohesion."
 date: "2025-06-01"
 author: "Erlin"
 ---
 
-# High Trust Societies: A Multidisciplinary Analysis of Emergence, Stability, and Consequences
+# A Multidisciplinary Analysis of Emergence, Stability, and Consequences
 
 ## Theoretical Framework: Defining High Trust Societies
 
