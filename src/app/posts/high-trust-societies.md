@@ -23,11 +23,11 @@ Trust is a multifaceted concept studied in sociology, political science, economi
 
 #### Sociology
 
-Sociologists view trust as a fundamental social construct that underpins social order [en.wikipedia.org](https://en.wikipedia.org/wiki/Trust_(social_science)). Classic works by Luhmann, Barber, and others describe trust as essential to reduce the complexity of modern life [en.wikipedia.org](https://en.wikipedia.org/wiki/Trust_(social_science)). Trust acts as a heuristic that allows people to interact without constantly fearing exploitation, thereby "reducing the complexity" of social relations [revista.appsicologia.org](http://revista.appsicologia.org/index.php/rpsicologia/article/view/561).
+Sociologists view trust as a fundamental social construct that underpins social order. Classic works by Luhmann, Barber, and others describe trust as essential to reduce the complexity of modern life. Trust acts as a heuristic that allows people to interact without constantly fearing exploitation, thereby "reducing the complexity" of social relations.
 
 Lewis and Weigert (1985) even call trust "indispensable in social relationships," and Zucker (1986) argues it is "vital for the maintenance of cooperation in society… necessary as grounds for even the most routine, everyday interaction" [revista.appsicologia.org](http://revista.appsicologia.org/index.php/rpsicologia/article/view/561).
 
-High trust societies, from a sociological perspective, are rich in social capital: dense networks of civic engagement, norms of reciprocity, and widespread interpersonal trust [en.wikipedia.org](https://en.wikipedia.org/wiki/Trust_(social_science)). These elements reinforce each other, creating communities where collective action and mutual aid flourish.
+High trust societies, from a sociological perspective, are rich in social capital: dense networks of civic engagement, norms of reciprocity, and widespread interpersonal trust. These elements reinforce each other, creating communities where collective action and mutual aid flourish.
 
 #### Political Science
 
@@ -148,7 +148,6 @@ Such differences translate into divergent outcomes in governance, economic prosp
   - Poor public services
   - High inequality
 
-Table 1: A comparison of typical characteristics and outcomes in high-trust versus low-trust societies. High trust tends to correlate with effective institutions, economic prosperity, and social cohesion, whereas low trust societies face challenges of corruption, underdevelopment, and social fragmentation.
 
 ## Historical and Contemporary Examples of High Trust Societies in the West
 
@@ -210,7 +209,7 @@ Understanding why some societies achieve high trust requires probing the psychol
 
 From a young age, people develop generalized trust (a baseline sense of whether others are trustworthy) through their experiences. Positive personal interactions accumulate to raise one's inclination to trust strangers, whereas traumatic experiences can scar individuals with mistrust [pewresearch.org](https://www.pewresearch.org/2025/05/08/americans-trust-in-one-another/).
 
-Psychologically, trust involves risk and vulnerability: the trustor must suspend fear of betrayal. This decision is often guided by social heuristics and emotions rather than pure calculation [en.wikipedia.org](https://en.wikipedia.org/wiki/Trust_(social_science)). For instance, empathy and a sense of shared identity can lead someone to trust another instinctively.
+Psychologically, trust involves risk and vulnerability: the trustor must suspend fear of betrayal. This decision is often guided by social heuristics and emotions rather than pure calculation. For instance, empathy and a sense of shared identity can lead someone to trust another instinctively.
 
 High trust societies typically nurture these pro-trust dispositions. Studies find that people who grow up in secure, fair environments become more trusting adults [pewresearch.org](https://www.pewresearch.org/2025/05/08/americans-trust-in-one-another/). Conversely, if one frequently witnesses cheating, discrimination, or lawlessness, one learns to be cautious ("you can't be too careful").
 
