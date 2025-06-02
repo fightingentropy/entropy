@@ -67,20 +67,86 @@ High trust in government improves policy compliance (for example, citizens will 
 
 Conversely, low trust imposes steep costs: if people expect cheating or incompetence, they withdraw from public life, contracts become costlier, corruption proliferates, and economic activity shifts to the informal sector. The stakes of trust are vividly illustrated by cross-country differences. In Norway and Sweden, over 60% of people say "most people can be trusted," whereas in low-trust societies like Brazil or Peru, that figure is below 10% [ourworldindata.org](https://ourworldindata.org/trust).
 
-Such differences translate into divergent outcomes in governance, economic prosperity, and social peace, as summarized in Table 1.
+Such differences translate into divergent outcomes in governance, economic prosperity, and social peace, as summarized below.
 
 ### Characteristics of High-Trust vs. Low-Trust Societies
 
-| Aspect/Outcome         | High-Trust Societies                                                                 | Low-Trust Societies                                                      |
-|------------------------|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| Generalized Social Trust | High levels of interpersonal trust; majority believe "most people can be trusted" (~60% in Scandinavia) | Low levels of interpersonal trust; most fear exploitation (<10% in parts of Latin America) |
-| Scope of Trust ("Trust Radius") | Broad radius extending beyond kin; trust extends to out-groups | Narrow trust focused on family/clan; suspicion of outsiders |
-| Institutional Quality  | Transparent, accountable institutions; low corruption; impartial rule of law | Weak institutions; prevalent corruption; nepotism and patronage |
-| Economic Organization  | Large-scale enterprises; low transaction costs; high innovation and investment | Family-centered businesses; high transaction costs; reduced investment |
-| Social Capital & Civic Life | Strong civic engagement; dense networks; active volunteering | Weak civic engagement; few civil society organizations; low volunteering |
-| Social Norms and Values | Emphasis on honesty, reciprocity, and common good; internalized ethical norms | Loyalty confined to in-group; endemic skepticism; amoral familialism |
-| Governance and Stability | Stable democracy; high civic participation; peaceful conflict resolution | Unstable/authoritarian politics; polarization; higher conflict/crime rates |
-| Quality of Life Outcomes | Higher happiness and satisfaction; strong social cohesion; well-provisioned public goods | Lower well-being; weak cohesion; poor public services; high inequality |
+#### Generalized Social Trust
+- **High-Trust Society:**
+  - High levels of interpersonal trust
+  - Majority believe "most people can be trusted" (~60% in Scandinavia)
+- **Low-Trust Society:**
+  - Low levels of interpersonal trust
+  - Most people fear exploitation (<10% in parts of Latin America)
+
+#### Scope of Trust ("Trust Radius")
+- **High-Trust Society:**
+  - Broad radius extending beyond kin
+  - Trust extends to out-groups
+- **Low-Trust Society:**
+  - Narrow trust focused on family/clan
+  - Suspicion of outsiders
+
+#### Institutional Quality
+- **High-Trust Society:**
+  - Transparent, accountable institutions
+  - Low corruption
+  - Impartial rule of law
+- **Low-Trust Society:**
+  - Weak institutions
+  - Prevalent corruption
+  - Nepotism and patronage
+
+#### Economic Organization
+- **High-Trust Society:**
+  - Large-scale enterprises
+  - Low transaction costs
+  - High innovation and investment
+- **Low-Trust Society:**
+  - Family-centered businesses dominate
+  - High transaction costs
+  - Reduced investment
+
+#### Social Capital & Civic Life
+- **High-Trust Society:**
+  - Strong civic engagement
+  - Dense networks of community groups
+  - Active volunteering
+- **Low-Trust Society:**
+  - Weak civic engagement
+  - Few effective civil society organizations
+  - Low volunteering rates
+
+#### Social Norms and Values
+- **High-Trust Society:**
+  - Emphasis on honesty and reciprocity
+  - Concern for common good
+  - Internalized ethical norms
+- **Low-Trust Society:**
+  - Loyalty confined to in-group
+  - Endemic skepticism
+  - Amoral familialism
+
+#### Governance and Stability
+- **High-Trust Society:**
+  - Stable democracy
+  - High civic participation
+  - Peaceful conflict resolution
+- **Low-Trust Society:**
+  - Unstable/authoritarian politics
+  - Polarization
+  - Higher conflict/crime rates
+
+#### Quality of Life Outcomes
+- **High-Trust Society:**
+  - Higher happiness and satisfaction
+  - Strong social cohesion
+  - Well-provisioned public goods
+- **Low-Trust Society:**
+  - Lower well-being
+  - Weak cohesion
+  - Poor public services
+  - High inequality
 
 Table 1: A comparison of typical characteristics and outcomes in high-trust versus low-trust societies. High trust tends to correlate with effective institutions, economic prosperity, and social cohesion, whereas low trust societies face challenges of corruption, underdevelopment, and social fragmentation.
 
