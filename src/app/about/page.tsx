@@ -1,5 +1,3 @@
-import LazyVideo from "../components/LazyVideo";
-
 export default function AboutPage() {
   return (
     <main style={{
