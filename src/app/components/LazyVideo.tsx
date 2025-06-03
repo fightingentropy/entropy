@@ -118,7 +118,7 @@ export default function LazyVideo({
           <div style={placeholderStyle}>
             <div>❌ Error loading video</div>
             <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>
-              "{title}" could not be loaded
+              &ldquo;{title}&rdquo; could not be loaded
             </div>
           </div>
         ) : !isIntersecting ? (

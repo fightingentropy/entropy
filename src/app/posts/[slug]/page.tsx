@@ -84,7 +84,7 @@ async function getPostData(slug: string) {
       content: contentHtml,
       private: data.private || false,
     };
-  } catch (error) {
+  } catch {
     notFound();
   }
 }
