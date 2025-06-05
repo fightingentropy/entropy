@@ -1,75 +1,124 @@
+# Game Theory: Your Strategic Playbook for Everyday Life
+
+> "The hardest part of any game is figuring out what the other player thinks **you** will do next."
+
 ---
-title: "Game Theory: The Art of Strategic Decision Making"
-excerpt: "Understanding the mathematical framework behind strategic decision making in competitive situations."
-date: "2025-06-03"
-author: "Erlin"
+
+## Why bother with game theory?
+
+You already use it—every time you split a bill, haggle over rent, decide whether to text first, or hold serve at match‑point. The formal apparatus of game theory turns those gut hunches into a clear framework so that you can:
+
+* **List every plausible move** (including ones you might miss in the moment)
+* **Anticipate reactions** instead of guessing
+* **Pick rationally**—maximising upside while limiting downside
+
+Think of it as a mental Swiss‑Army knife for social life, finance, politics, and even Friday‑night plans.
+
 ---
 
-# Game Theory: The Art of Strategic Decision Making
+## A thirty‑second timeline
 
-Game theory is a way to study how people make choices when their outcomes depend on what others do. Think of it like a poker game: your move (bet, fold, or raise) depends on what you think the other players will do. Von Neumann and Morgenstern created a math-based system to predict and analyze these situations.
+* **1944** — John von Neumann & Oskar Morgenstern publish *Theory of Games and Economic Behavior*, birthing the field
+* **1950** — John Nash proves his equilibrium theorem (yes, the *A Beautiful Mind* guy)
+* **1960‑1980s** — Economists adapt the tools to bargaining, auctions, and international trade
+* **1990‑2020** — Evolutionary biologists, AI engineers, and political scientists push game theory mainstream
 
-**Key Idea:** People are strategic. They try to pick the best move, knowing others are doing the same.
+---
 
-**Example:** You're at a bar, deciding whether to chat up someone. Your success depends on their mood, what you say, and if someone else is already talking to them. Game theory helps map out these choices.
+## The three building blocks
 
-## Players, Strategies, and Payoffs
+### 1. Players
 
-Every "game" has three main parts:
+Anyone whose choice affects the outcome—yourself, your mates, rival firms, entire countries.
 
-- **Players:** The people or groups making decisions (e.g., you and your mate betting on a tennis match).
-- **Strategies:** The possible moves each player can make (e.g., bet £10, bet £50, or don't bet).
-- **Payoffs:** What each player gets based on everyone's choices (e.g., you win £50 if you bet and win, or lose £10 if you bet and lose).
+### 2. Strategies
 
-**Key Idea:** Players choose strategies to get the best payoff, but payoffs depend on everyone's moves.
+Every action a player can take. For a dinner debate that might mean "order sushi," "order pizza," or "skip dinner."
 
-**Example:** You and a friend are picking a place to eat. You want sushi, they want pizza. If you both pick sushi, you're happy (high payoff). If you pick sushi and they pick pizza, you're both annoyed (low payoff).
+### 3. Payoffs
 
-## Utility Theory: Measuring Happiness
+The result each player receives once all choices are revealed—measured in **utility**, not just cash.
 
-Von Neumann and Morgenstern said people make choices to maximize their "utility" (basically, happiness or satisfaction). Utility isn't just money—it's how much you value something.
+> **Example – Choosing where to eat**
+>
+> * If you both choose **pizza**, you score 3 happiness points while your friend scores 4
+> * If you pick **pizza** and they pick **sushi**, you get 1 and they get 2
+> * If you pick **sushi** and they pick **pizza**, you earn 2 and they earn 1
+> * If you both pick **sushi**, you each do pretty well: you score 4, your friend 3
+>
+> Those numbers don't need to be exact—only to rank outcomes in the right order.
 
-**Key Idea:** Everyone has their own way of measuring utility. £100 might mean more to you than to a millionaire. Utility helps compare choices, like "Is going to a comedy show worth skipping the gym?"
+---
 
-**Example:** You're deciding between a night out raving or reading a philosophy book. Raving might give you 10 "utility points" (fun, dancing, socializing), but reading gives you 8 (learning, chill vibes). You'd pick raving unless the book's value goes up (e.g., it's a rare find).
+## Utility: the personal scorecard
 
-## Zero-Sum Games: Winner Takes All
+Utility ranks outcomes by preference. A £50 win may thrill a student (utility = 10) but bore a hedge‑fund manager (utility = 2). Game theory only cares about those relative rankings, not the absolute pounds.
 
-A zero-sum game is when one player's gain is another's loss. The total "stuff" (money, points, etc.) stays the same—it just gets redistributed.
+---
 
-**Key Idea:** In zero-sum games, you win by outsmarting the other player. Von Neumann focused a lot on these.
+## Types of games you meet in the wild
 
-**Example:** In a tennis match, if you win the point, your opponent loses it. There’s no middle ground. Your strategy (serve hard or spin) aims to maximize your chance of winning while predicting their move.
+* **Zero‑sum:** the pie is fixed; your gain is my loss (tennis, most poker hands)
+* **Non‑zero‑sum:** cooperation can enlarge or shrink the pie (business partnerships, climate deals)
+* **Cooperative:** players can strike binding agreements (forming a cartel, planning a group holiday)
+* **Non‑cooperative:** everyone acts alone (auction bidding, casual dating)
+* **Repeated:** the same interaction happens again and again—past behaviour shapes trust (weekly five‑a‑side football)
+* **Sequential:** moves unfold one after another (property bidding wars)
 
-## Equilibrium: Nobody Wants to Change
+---
 
-An equilibrium is when everyone picks a strategy and no one wants to switch because they’re getting the best payoff they can, given what others are doing. Von Neumann and Morgenstern introduced the idea of a “minimax” equilibrium for zero-sum games.
+## How to spot an equilibrium
 
-**Minimax:** You pick the strategy that gives you the best “worst-case” outcome. It’s like preparing for the other player to screw you over as much as possible.
+* **Dominant strategy:** a move that beats all your other moves, no matter what others do
+* **Nash equilibrium:** no player can unilaterally improve their payoff by switching strategies
+* **Minimax:** in zero‑sum games, choose the play that *maximises your worst‑case* payoff
 
-**Example:** You’re trading stocks. You can’t control the market, so you pick a strategy (buy low, sell high) that minimizes your losses if the market crashes, while still aiming for profit. If everyone’s doing this, the market hits an equilibrium where no one changes their plan.
+At equilibrium everyone feels, "If I changed now, I'd be worse off—given what the rest are doing."
 
-## Cooperative vs. Non-Cooperative Games
+---
 
-**Non-Cooperative:** Players act alone, like in poker. You don’t team up or make deals.
+## Mixed strategies: calculated unpredictability
 
-**Cooperative:** Players can form alliances or agreements, like in business partnerships. Von Neumann and Morgenstern explored how groups split payoffs fairly.
+When no pure strategy dominates, sprinkle in randomness. For example, serve wide 40% of the time and down‑the‑T 60% so your tennis opponent can't camp on one side. The mix is chosen to make rivals indifferent and therefore unable to exploit you.
 
-**Key Idea:** Cooperative games are trickier because you need to trust others to stick to the deal.
+---
 
-**Example:** You and your mates plan a group holiday. You cooperate to pick a destination (Ibiza for raving). The “payoff” (fun) depends on everyone agreeing and contributing (e.g., splitting costs). If someone bails, the plan fails.
+## Real‑life snapshots
 
-## Mixed Strategies: Playing the Odds
+* **Late‑night Uber standoff:** both rider and driver hope the *other* cancels to avoid a £5 fee. Classic "Chicken"
+* **Dating apps:** you decide whether to send the first message without knowing the other person's interest level. A Bayesian game of hidden information
+* **Trading the market:** you want profit even if prices crash; minimax thinking limits worst‑case loss
+* **Group holiday to Ibiza:** friends must agree on a destination and split costs fairly—cooperative game territory, where concepts like the Shapley value help divide gains
 
-6. Cooperative vs. Non-Cooperative Games
-Non-Cooperative: Players act alone, like in poker. You don’t team up or make deals.
-Cooperative: Players can form alliances or agreements, like in business partnerships. Von Neumann and Morgenstern explored how groups split payoffs fairly.
-Key Idea: Cooperative games are trickier because you need to trust others to stick to the deal.
-Example: You and your mates plan a group holiday. You cooperate to pick a destination (Ibiza for raving). The “payoff” (fun) depends on everyone agreeing and contributing (e.g., splitting costs). If someone bails, the plan fails.
-7. Mixed Strategies: Playing the Odds
-Sometimes, there’s no single “best” move. Instead, you mix your strategies randomly to keep others guessing. This is called a mixed strategy.
+---
 
-Key Idea: By being unpredictable, you avoid getting screwed over. It’s like bluffing in poker.
-Example: You’re at a comedy show, deciding whether to heckle the comedian. If you always heckle, they’ll target you. If you never heckle, you miss out on fun. So, you heckle sometimes (say, 30% of the time) to keep it spicy without being predictable.
-Why This Matters
-These concepts help you think strategically in life, whether you’re trading stocks, flirting at a bar, or planning a night out in London. Game theory shows how to weigh your options, predict others’ moves, and maximize your “payoff” (fun, money, or growth). It’s like a mental playbook for winning at socializing, business, or self-improvement.
+## Levelling up: advanced lenses (one‑liners)
+
+* **Incomplete information** → Bet on *beliefs* about hidden traits (sealed‑bid auctions)
+* **Evolutionary dynamics** → Why "tit‑for‑tat" thrives in repeated dilemmas (cultural norms)
+* **Mechanism design** → Flip the script: craft rules so strategic players reveal truth (carbon credits, e‑Bay)
+
+---
+
+## Key take‑aways checklist
+
+* Identify **players, strategies, payoffs** before debating options
+* Translate outcomes into **utility**, not just money
+* Ask: "Can anyone switch and do better?" If not, you've found equilibrium
+* Introduce randomness when predictability becomes a liability
+* Remember: most real‑world conflicts are **non‑zero‑sum**—look for ways to expand the pie
+
+---
+
+## Further reading & tools
+
+1. *Thinking Strategically* by Dixit & Nalebuff — lively intro without heavy maths
+2. Nicky Case's interactive "Evolution of Trust" — play through the Prisoner's Dilemma
+3. *A Course in Game Theory* by Osborne & Rubinstein — for the mathematically inclined
+4. Try the online "Colonel Blotto" simulator to feel mixed‑strategy warfare
+
+---
+
+## Final word
+
+Game theory won't predict every twist of human emotion, but it **sharpens your odds**—at the poker table, in the boardroom, on a first date, or queuing for a 3 a.m. kebab on Old Street. Treat it as a discipline of *structured curiosity*: always ask, *"If our roles were reversed, what would **I** do?"* Master that habit and you'll rarely play life on the back foot.
