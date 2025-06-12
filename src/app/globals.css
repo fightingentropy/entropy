@@ -1,5 +1,5 @@
 :root {
-  --background: #fff;
+  --background: #f9f9f9;
   --background-secondary: rgba(0, 0, 0, 0.02);
   --foreground: #171717;
   --foreground-secondary: #666;
@@ -7,15 +7,13 @@
   --accent: #0070f3;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --background-secondary: rgba(255, 255, 255, 0.05);
-    --foreground: #ededed;
-    --foreground-secondary: #a0a0a0;
-    --foreground-alpha: rgba(255, 255, 255, 0.2);
-    --accent: #3291ff;
-  }
+.dark {
+  --background: #0a0a0a;
+  --background-secondary: rgba(255, 255, 255, 0.05);
+  --foreground: #ededed;
+  --foreground-secondary: #a0a0a0;
+  --foreground-alpha: rgba(255, 255, 255, 0.2);
+  --accent: #3291ff;
 }
 
 html {
@@ -57,10 +55,20 @@ a[style*="text-decoration: none"]:hover {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 /* Prose styles for article content */
