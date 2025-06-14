@@ -144,5 +144,10 @@ export const tweets: Tweet[] = [
     url: 'https://x.com/GwartyGwart/status/1932236884316393655',
     author: 'GwartyGwart',
     id: '1932236884316393655'
+  },
+  {
+    url: 'https://x.com/goodalexander/status/1933161119461277829',
+    author: 'goodalexander',
+    id: '1933161119461277829'
   }
 ]; 
