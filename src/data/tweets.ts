@@ -149,5 +149,10 @@ export const tweets: Tweet[] = [
     url: 'https://x.com/goodalexander/status/1933161119461277829',
     author: 'goodalexander',
     id: '1933161119461277829'
+  },
+  {
+    url: 'https://x.com/goodalexander/status/1933706395616227461',
+    author: 'goodalexander',
+    id: '1933706395616227461'
   }
 ]; 
