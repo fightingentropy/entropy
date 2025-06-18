@@ -1,7 +1,7 @@
 ---
 title: "Stablecoin Supercycle"
-excerpt: "Stablecoins have rapidly moved from crypto niche to fintech mainstream, reshaping innovation, debt markets, and consumer finance. With over 160 million holders worldwide and potential to reach $2+ trillion market cap, we're entering a transformative era."
-date: "2025-01-05"
+excerpt: "Stablecoins have rapidly moved from crypto niche to fintech mainstream, reshaping innovation, debt markets, and consumer finance. With over 160 million holders worldwide and potential to reach $5+ trillion market cap, we're entering a transformative era."
+date: "2025-06-18"
 author: "Erlin"
 ---
 
@@ -75,7 +75,7 @@ Crucially, all these efforts point to stablecoins becoming embedded in the fabri
 
 ## The Future: A Thriving Stablecoin Ecosystem in 2030 and Beyond
 
-Looking ahead, the stablecoin ecosystem of the future could be orders of magnitude larger and more interconnected than today. Analysts and officials forecast robust growth: U.S. stablecoin market cap could exceed $2 trillion by 2028, and potentially reach $3.7 trillion by 2030 if current trends continue. At that scale, stablecoins would rival the size of the M2 money supply of some large economies, truly cementing themselves as a core part of the financial system. What might a mature stablecoin-centric financial landscape entail?
+Looking ahead, the stablecoin ecosystem of the future could be orders of magnitude larger and more interconnected than today. Analysts and officials forecast robust growth: U.S. stablecoin market cap could exceed $2 trillion by 2028, and potentially reach over $5 trillion by 2030 if current trends continue. At that scale, stablecoins would rival the size of the M2 money supply of some large economies, truly cementing themselves as a core part of the financial system. What might a mature stablecoin-centric financial landscape entail?
 
 **Everyday Commerce and Payments:** In a thriving scenario, consumers might use stablecoins as casually as cash or cards – paying for groceries, streaming subscriptions, or Uber rides with digital dollars. Thanks to integrations (like the Shopify example), this could happen behind the scenes with minimal friction. Stablecoin payment apps or wallet cards could become as ubiquitous as Visa/Mastercard today, but with lower fees and instant settlement. This might force incumbent payment fees down, saving merchants billions in processing costs. We may also see micropayments and machine-to-machine payments flourish (e.g. IoT devices paying each other in tiny stablecoin fractions) since stablecoins handle small transactions efficiently.
 
