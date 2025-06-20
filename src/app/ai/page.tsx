@@ -23,6 +23,22 @@ const videos = [
   {
     src: "/videos/This is brilliant. They nailed almost every single influencer archetype. God help us all 💀.mp4",
     title: "Influencer Archetypes"
+  },
+  {
+    src: "/videos/theo von can't swim.mp4",
+    title: "Turn off: Can't Swim"
+  },
+  {
+    src: "/videos/theo von chinese.mp4",
+    title: "Chinese"
+  },
+  {
+    src: "/videos/theo von koreans.mp4",
+    title: "Koreans"
+  },
+  {
+    src: "/videos/Scam Yong Un.mp4",
+    title: "Scam Yong Un"
   }
 ];
 
