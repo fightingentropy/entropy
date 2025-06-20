@@ -88,20 +88,6 @@ export default function NavMenu() {
               About
             </Link>
             <Link 
-              href="/contact" 
-              onClick={closeMenu}
-              style={{
-                display: 'block',
-                padding: '1.25rem 1.75rem',
-                color: 'var(--foreground)',
-                textDecoration: 'none',
-                borderBottom: '1px solid var(--foreground-alpha)',
-                fontSize: '1.1rem'
-              }}
-            >
-              Contact
-            </Link>
-            <Link 
               href="/funny" 
               onClick={closeMenu}
               style={{
