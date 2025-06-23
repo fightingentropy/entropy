@@ -1,3 +1,8 @@
+---
+title: "Game Theory: Your Strategic Playbook for Everyday Life"
+date: "2024-12-15"
+---
+
 # Game Theory: Your Strategic Playbook for Everyday Life
 
 > "The hardest part of any game is figuring out what the other player thinks **you** will do next."
