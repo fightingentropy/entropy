@@ -43,7 +43,7 @@ export const typewriterQuotes = [
   "He who cannot obey himself will be commanded.",
   "Obsession beats talent.",
   "The only thing an old man can tell a young man is that it goes fast, real fast, and if you're not careful it's too late.",
-  "You can't give shit leftists a single millimetre. If you give them a millimetre they will use it to destroy you. - Milei",
+
   "Man has it all in his hands, and it all slips through his fingers from sheer cowardice. - Dostoyevsky",
   "Brilliant thinking is rare, but courage is in even shorter supply than genius. - Thiel",
   "Time is a flat circle.",
