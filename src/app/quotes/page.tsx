@@ -1,17 +1,32 @@
 "use client";
 
 import LazyVideo from "../components/LazyVideo";
+import TypewriterQuote from "../components/TypewriterQuote";
 import { useRef, useEffect, useState } from "react";
 
 const videos = [
   {
-    src: "/videos/bitcoin or saylor babay.mp4",
-    title: "Bitcoin or Saylor Babay"
-  },
-  {
     src: "/videos/saylor_apple.mp4",
     title: "Apple & Bitcoin"
   }
+];
+
+type TypewriterSection = {
+  type: 'typewriter';
+  title: string;
+};
+
+type VideoSection = {
+  type: 'video';
+  src: string;
+  title: string;
+};
+
+type Section = TypewriterSection | VideoSection;
+
+const sections: Section[] = [
+  { type: 'typewriter', title: 'Quotes' },
+  ...videos.map(video => ({ type: 'video' as const, ...video }))
 ];
 
 export default function QuotesPage() {
@@ -20,8 +35,8 @@ export default function QuotesPage() {
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
-    sectionRefs.current = sectionRefs.current.slice(0, videos.length);
-    videos.forEach((_, idx) => {
+    sectionRefs.current = sectionRefs.current.slice(0, sections.length);
+    sections.forEach((_, idx) => {
       if (!sectionRefs.current[idx]) return;
       const observer = new IntersectionObserver(
         ([entry]) => {
@@ -47,9 +62,9 @@ export default function QuotesPage() {
           background: 'var(--background)',
         }}
       >
-        {videos.map((video, idx) => (
+        {sections.map((section, idx) => (
           <section
-            key={video.src}
+            key={section.type === 'typewriter' ? 'typewriter' : section.src}
             ref={el => { sectionRefs.current[idx] = el; }}
             style={{
               minHeight: '100vh',
@@ -59,16 +74,23 @@ export default function QuotesPage() {
               justifyContent: 'center',
               scrollSnapAlign: 'start',
               background: 'var(--background)',
-              padding: 0,
+              padding: section.type === 'typewriter' ? '2rem' : 0,
             }}
           >
-            <LazyVideo
-              src={video.src}
-              title={video.title}
-              containerStyle={{ maxWidth: '900px', width: '100%', margin: 0, marginTop: '-10vh' }}
-              videoStyle={{ maxHeight: '70vh', width: '100%' }}
-              playing={activeIdx === idx}
-            />
+            {section.type === 'typewriter' ? (
+              <TypewriterQuote 
+                typingSpeed={40}
+                pauseDuration={3000}
+              />
+            ) : (
+              <LazyVideo
+                src={section.src}
+                title={section.title}
+                containerStyle={{ maxWidth: '900px', width: '100%', margin: 0, marginTop: '-10vh' }}
+                videoStyle={{ maxHeight: '70vh', width: '100%' }}
+                playing={activeIdx === idx}
+              />
+            )}
           </section>
         ))}
       </div>

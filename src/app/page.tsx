@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import { formatDate } from './utils';
+import LandingTypewriter from './components/LandingTypewriter';
 
 export const dynamic = 'force-static'; // Ensure static generation
 
@@ -32,13 +33,15 @@ export default async function Home() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <main style={{
-      maxWidth: '680px',
-      margin: '0 auto',
-      padding: '2rem 1.5rem',
-      fontFamily: 'var(--font-geist-sans)',
-    }}>
-      <div>
+    <>
+      <LandingTypewriter />
+      <main style={{
+        maxWidth: '680px',
+        margin: '0 auto',
+        padding: '2rem 1.5rem',
+        fontFamily: 'var(--font-geist-sans)',
+      }}>
+        <div>
         {publicPosts.map((post) => (
           <article key={post.slug} style={{
             borderBottom: '1px solid var(--foreground-alpha)',
@@ -74,7 +77,8 @@ export default async function Home() {
             </div>
           </article>
         ))}
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }
