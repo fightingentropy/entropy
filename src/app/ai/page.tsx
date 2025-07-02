@@ -5,10 +5,6 @@ import { useRef, useEffect, useState } from "react";
 
 const videos = [
   {
-    src: "/videos/bitcoin or saylor babay.mp4",
-    title: "Bitcoin or Saylor Babay"
-  },
-  {
     src: "/videos/it's over.mp4",
     title: "It's Over"
   },
@@ -43,6 +39,10 @@ const videos = [
   {
     src: "/videos/Scam Yong Un.mp4",
     title: "Scam Yong Un"
+  },
+  {
+    src: "/videos/bitcoin or saylor babay.mp4",
+    title: "Bitcoin or Saylor Babay"
   }
 ];
 
