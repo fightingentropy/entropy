@@ -90,9 +90,8 @@ async function getPostData(slug: string) {
 }
 
 // The page component
-export default async function Page({ params }: { params: { slug: string } }) {
-  // Explicit workaround for Next.js dev warning
-  const resolvedParams = await Promise.resolve(params);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
   const post = await getPostData(resolvedParams.slug);
   
   if (!post) {
