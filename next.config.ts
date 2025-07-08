@@ -10,6 +10,98 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['react', 'react-dom'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'fbclid',
+          },
+        ],
+        destination: '/:path*',
+        permanent: false,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'utm_source',
+          },
+        ],
+        destination: '/:path*',
+        permanent: false,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'utm_medium',
+          },
+        ],
+        destination: '/:path*',
+        permanent: false,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'utm_campaign',
+          },
+        ],
+        destination: '/:path*',
+        permanent: false,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'utm_term',
+          },
+        ],
+        destination: '/:path*',
+        permanent: false,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'utm_content',
+          },
+        ],
+        destination: '/:path*',
+        permanent: false,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'gclid',
+          },
+        ],
+        destination: '/:path*',
+        permanent: false,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'msclkid',
+          },
+        ],
+        destination: '/:path*',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
