@@ -5,8 +5,6 @@ date: "2025-06-18"
 author: "Erlin"
 ---
 
-# Stablecoin Supercycle
-
 Stablecoins – digital currencies pegged to stable assets like the U.S. dollar – have rapidly moved from crypto niche to fintech mainstream. In the past year, stablecoin usage has surged and their effects are rippling across private sector innovation, government finance, and everyday consumer experiences. With over 160 million holders worldwide and global stablecoin supply growing 54% year-over-year, 2025 is shaping up to be a breakout year for these digital dollars. This post explores how stablecoins serve as programmable money fueling innovation, how they boost demand for U.S. Treasuries (even easing national debt pressures), what benefits consumers gain (from cheaper cross-border payments to financial inclusion), how programmable money is reshaping financial infrastructure (instant settlement, composability), the disruption facing payment networks and banks, real-world examples like Coinbase and Stripe driving adoption, and a forward look at a thriving stablecoin ecosystem.
 
 ## Stablecoins as Programmable Money Driving Private Sector Innovation
