@@ -7,8 +7,6 @@ readingTime: "18 min"
 tags: ["social capital", "governance", "economics", "psychology"]
 ---
 
-# High Trust Societies
-
 **Key Takeaways**
 
 - High trust lowers transaction costs and boosts economic growth.
@@ -17,10 +15,8 @@ tags: ["social capital", "governance", "economics", "psychology"]
 - Trust acts as an informal public good, facilitating collective action.
 - Erosion of trust leads to higher corruption, fragile institutions, and polarization.
 
-# A Multidisciplinary Analysis of Emergence, Stability, and Consequences
 
-## Theoretical Framework: Defining High Trust Societies
-
+## Theoretical Framework
 
 At its core, trust is a social expectation and a willingness to be vulnerable based on positive perceptions of others' behavior. Fukuyama famously defines trust as "the expectation of regular, honest, and cooperative behavior, based on commonly shared norms" [minneapolisfed.org](https://www.minneapolisfed.org/article/1995/trust-the-social-virtues-and-the-creation-of-prosperity). A high trust society is one in which such expectations are broadly shared, meaning that individuals confidently trust most other people and institutions in their community. In these societies, ethical norms of honesty and reciprocity are widely internalized, enabling cooperation beyond close personal circles [minneapolisfed.org](https://www.minneapolisfed.org/article/1995/trust-the-social-virtues-and-the-creation-of-prosperity).
 
