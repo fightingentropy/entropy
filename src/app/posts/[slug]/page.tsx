@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import remarkGfm from 'remark-gfm';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { formatDate } from '../../utils';
@@ -12,14 +13,14 @@ import ImageHydrator from '../../components/ImageHydrator';
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), 'src/app/posts');
   const files = await fs.readdir(postsDir);
-  
-  const mdFiles = files.filter(file => 
-    file.endsWith('.md') && 
-    !file.startsWith('.')
+
+  // Include both .md and .mdx posts to ease migration to MDX
+  const postFiles = files.filter(
+    (file) => /\.mdx?$/.test(file) && !file.startsWith('.')
   );
-  
-  return mdFiles.map(file => ({
-    slug: file.replace(/\.md$/, '')
+
+  return postFiles.map((file) => ({
+    slug: file.replace(/\.mdx?$/, ''),
   }));
 }
 
@@ -63,12 +64,32 @@ function optimizeImages(content: string): string {
 
 // Get post data
 async function getPostData(slug: string) {
-  const postPath = path.join(process.cwd(), 'src/app/posts', `${slug}.md`);
-  
+  // Prefer `.mdx`, fallback to legacy `.md`
+  const mdxPath = path.join(process.cwd(), 'src/app/posts', `${slug}.mdx`);
+  const mdPath = path.join(process.cwd(), 'src/app/posts', `${slug}.md`);
+
+  let fileContent: string | null = null;
+
   try {
-    const fileContent = await fs.readFile(postPath, 'utf8');
-    const { data, content } = matter(fileContent);
-    const processedContent = await remark().use(html).process(content);
+    fileContent = await fs.readFile(mdxPath, 'utf8');
+  } catch {
+    try {
+      fileContent = await fs.readFile(mdPath, 'utf8');
+    } catch {
+      notFound();
+    }
+  }
+
+  try {
+    if (fileContent === null) {
+      notFound();
+    }
+    const { data, content } = matter(fileContent!);
+    // Allow raw HTML inside markdown/MDX without sanitizing so that authors can embed HTML freely.
+    const processedContent = await remark()
+      .use(remarkGfm) // GitHub-flavoured markdown (tables, strikethrough, etc.)
+      .use(html, { allowDangerousHtml: true })
+      .process(content);
     let contentHtml = processedContent.toString();
     
     // Add target="_blank" to all external links

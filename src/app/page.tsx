@@ -12,7 +12,7 @@ export default async function Home() {
   const postsDir = path.join(process.cwd(), 'src/app/posts');
   const files = await fs.readdir(postsDir);
   const posts = await Promise.all(
-    files.filter(f => f.endsWith('.md')).map(async (filename) => {
+    files.filter((f) => /\.mdx?$/.test(f)).map(async (filename) => {
       const filePath = path.join(postsDir, filename);
       const fileContent = await fs.readFile(filePath, 'utf8');
       const { data } = matter(fileContent);
@@ -21,7 +21,7 @@ export default async function Home() {
         excerpt: data.excerpt,
         date: data.date,
         author: data.author || 'Erlin', // Default to Erlin if not specified
-        slug: filename.replace(/\.md$/, ''),
+        slug: filename.replace(/\.mdx?$/, ''),
         private: data.private || false, // Add support for private flag
       };
     })
