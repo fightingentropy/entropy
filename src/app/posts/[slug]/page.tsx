@@ -189,8 +189,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           
           <div 
             style={{ 
-              fontSize: '1.15rem', 
-              lineHeight: 1.7,
+              fontSize: '1rem', // slightly smaller for comfortable reading
+              lineHeight: 1.65,
               color: 'var(--foreground)',
             }} 
             dangerouslySetInnerHTML={{ __html: post.content }} 
