@@ -5,7 +5,7 @@ date: "2025-04-05"
 author: "Erlin"
 ---
 
-# The Contrarian's Edge: Why Pushback Points to Potential
+# The Contrarian's Edge
 
 In a world increasingly driven by consensus, it's easy to overlook a fundamental truth: **contention is necessary for outsized returns and breakthrough innovation**. When an idea is immediately accepted by everyone, its potential upside is already diminished—priced in by early adoption, overexposure, or diluted novelty. The path to transformative value lies in the shadows of disagreement.
 
