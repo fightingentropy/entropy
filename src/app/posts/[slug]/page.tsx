@@ -19,9 +19,25 @@ export async function generateStaticParams() {
     (file) => /\.mdx?$/.test(file) && !file.startsWith('.')
   );
 
-  return postFiles.map((file) => ({
-    slug: file.replace(/\.mdx?$/, ''),
-  }));
+  // Read all posts in parallel and exclude those marked as private
+  const params = await Promise.all(
+    postFiles.map(async (file) => {
+      try {
+        const fullPath = path.join(postsDir, file);
+        const fileContent = await fs.readFile(fullPath, 'utf8');
+        const { data } = matter(fileContent);
+        if (data.private) {
+          return null; // Skip private posts
+        }
+        return { slug: file.replace(/\.mdx?$/, '') };
+      } catch {
+        return null; // In case of any read/parse error just skip
+      }
+    })
+  );
+
+  // Filter out nulls (private or errored posts)
+  return params.filter(Boolean) as Array<{ slug: string }>;
 }
 
 // Function to make links open in new tabs and apply custom styling
@@ -85,6 +101,11 @@ async function getPostData(slug: string) {
       notFound();
     }
     const { data, content } = matter(fileContent!);
+
+    // Immediately hide private posts from being rendered
+    if (data.private) {
+      notFound();
+    }
     // Allow raw HTML inside markdown/MDX without sanitizing so that authors can embed HTML freely.
     const processedContent = await remark()
       .use(remarkGfm) // GitHub-flavoured markdown (tables, strikethrough, etc.)
