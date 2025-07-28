@@ -5,6 +5,10 @@ import { useRef, useEffect, useState } from "react";
 
 const videos = [
   {
+    src: "/videos/This is brilliant. They nailed almost every single influencer archetype. God help us all 💀.mp4",
+    title: "Influencer Archetypes"
+  },
+  {
     src: "/videos/it's over.mp4",
     title: "It's Over"
   },
@@ -19,10 +23,6 @@ const videos = [
   {
     src: "/videos/puppramin.mp4",
     title: "Puppramin"
-  },
-  {
-    src: "/videos/This is brilliant. They nailed almost every single influencer archetype. God help us all 💀.mp4",
-    title: "Influencer Archetypes"
   },
   {
     src: "/videos/theo von can't swim.mp4",
