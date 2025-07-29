@@ -31,7 +31,7 @@ export default function OptimizedImage({
         width: '100%',
         height: 'auto',
         maxWidth: width,
-        margin: '1.5rem auto',
+        margin: '0 auto',
         borderRadius: '4px',
         overflow: 'hidden',
         backgroundColor: isLoading ? '#f5f5f5' : 'transparent',

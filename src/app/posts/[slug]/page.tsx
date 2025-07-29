@@ -61,7 +61,7 @@ function optimizeImages(content: string): string {
         style="
           width: 100%; 
           max-width: 800px; 
-          margin: 1.5rem auto; 
+          margin: 0 auto; 
           min-height: 200px; 
           background-color: #f5f5f5; 
           border-radius: 4px; 

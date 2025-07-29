@@ -22,7 +22,7 @@ export default function ImageHydrator() {
             width: '100%',
             height: 'auto',
             maxWidth: '800px',
-            margin: '1.5rem auto',
+            margin: '0 auto',
             borderRadius: '4px',
             overflow: 'hidden',
           }}>
