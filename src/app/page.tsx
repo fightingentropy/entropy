@@ -58,15 +58,15 @@ export default async function Home() {
               }}>
                 {post.title}
               </h2>
+              <p style={{ 
+                fontSize: '1rem', 
+                lineHeight: 1.5, 
+                color: 'var(--foreground)',
+                marginBottom: '0.75rem' 
+              }}>
+                {post.excerpt}
+              </p>
             </Link>
-            <p style={{ 
-              fontSize: '1rem', 
-              lineHeight: 1.5, 
-              color: 'var(--foreground)',
-              marginBottom: '0.75rem' 
-            }}>
-              {post.excerpt}
-            </p>
             <div style={{ 
               fontSize: '0.9rem', 
               color: 'var(--foreground-secondary)',
