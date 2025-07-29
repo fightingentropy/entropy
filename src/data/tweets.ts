@@ -26,11 +26,6 @@ export const tweets: Tweet[] = [
     id: '1913305146534096983'
   },
   {
-    url: 'https://x.com/EmperorBTC/status/1924767847504609685',
-    author: 'EmperorBTC',
-    id: '1924767847504609685'
-  },
-  {
     url: 'https://x.com/goodalexander/status/1925364789708009963',
     author: 'goodalexander',
     id: '1925364789708009963'
@@ -39,11 +34,6 @@ export const tweets: Tweet[] = [
     url: 'https://x.com/romanhelmetguy/status/1922306795910860906',
     author: 'romanhelmetguy',
     id: '1922306795910860906'
-  },
-  {
-    url: 'https://x.com/SplitCapital/status/1927350329907024090',
-    author: 'SplitCapital',
-    id: '1927350329907024090'
   },
   {
     url: 'https://x.com/chameleon_jeff/status/1879086717900386782',
@@ -104,11 +94,6 @@ export const tweets: Tweet[] = [
     url: 'https://x.com/mikeykremer/status/1878601513108636075',
     author: 'mikeykremer',
     id: '1878601513108636075'
-  },
-  {
-    url: 'https://x.com/0xmidjet/status/1879641026497053009',
-    author: '0xmidjet',
-    id: '1879641026497053009'
   },
   {
     url: 'https://x.com/0xinvicta/status/1879529540223213857',
