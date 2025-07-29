@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-cards": "node scripts/generate-social-cards.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
@@ -23,9 +24,11 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@napi-rs/canvas": "^0.1.74",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "canvas": "^3.1.2",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "typescript": "^5"
