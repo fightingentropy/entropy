@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
-import Image from "next/image";
-import { createRoot } from "react-dom/client";
+import { useEffect, useRef } from "react";
+import { createRoot, Root } from "react-dom/client";
 
 export default function ImageHydrator() {
+  const rootsRef = useRef<Map<Element, Root>>(new Map());
+
   useEffect(() => {
     // Find all image placeholder containers
     const containers = document.querySelectorAll('.optimized-img-container');
@@ -25,18 +26,17 @@ export default function ImageHydrator() {
             borderRadius: '4px',
             overflow: 'hidden',
           }}>
-            <Image
+            <img
               src={src}
               alt={alt}
-              width={800}
-              height={600}
               loading="lazy"
               style={{
                 width: '100%',
                 height: 'auto',
                 display: 'block',
+                border: 'none',
+                outline: 'none',
               }}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
               onError={(e) => {
                 const target = e.target as HTMLElement;
                 if (target.parentElement) {
@@ -61,11 +61,32 @@ export default function ImageHydrator() {
           </div>
         );
 
-        // Replace the placeholder with the optimized image
-        const root = createRoot(container);
+        // Check if we already have a root for this container
+        let root = rootsRef.current.get(container);
+        if (!root) {
+          root = createRoot(container);
+          rootsRef.current.set(container, root);
+        }
+        
         root.render(<ImageComponent />);
       }
     });
+
+    // Cleanup function to unmount roots when component unmounts
+    return () => {
+      // Use setTimeout to defer unmounting until after the current render cycle
+      setTimeout(() => {
+        rootsRef.current.forEach((root) => {
+          try {
+            root.unmount();
+          } catch (error) {
+            // Ignore unmount errors that might occur during cleanup
+            console.warn('Error unmounting image root:', error);
+          }
+        });
+        rootsRef.current.clear();
+      }, 0);
+    };
   }, []);
 
   return null; // This component doesn't render anything itself

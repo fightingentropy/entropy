@@ -157,7 +157,8 @@ html.dark {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
-  margin-bottom: 1.5rem;
+  margin: 0;
+  display: block;
 }
 
 .prose hr {

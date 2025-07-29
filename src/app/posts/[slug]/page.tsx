@@ -51,8 +51,8 @@ function addTargetBlankToLinks(content: string): string {
 // Function to optimize images in HTML content
 function optimizeImages(content: string): string {
   return content.replace(
-    /<img\s+src="([^"]+)"\s+alt="([^"]*)"[^>]*>/g,
-    (match, src, alt) => {
+    /<img\s+src="([^"]+)"(?:\s+alt="([^"]*)")?[^>]*>/g,
+    (match, src, alt = '') => {
       // Create a placeholder div that will be hydrated on the client side
       return `<div 
         class="optimized-img-container" 
@@ -72,7 +72,7 @@ function optimizeImages(content: string): string {
           font-size: 0.9rem;
         "
       >
-        🖼️ Loading optimized image: ${alt}
+        🖼️ Loading optimized image${alt ? `: ${alt}` : '...'}
       </div>`;
     }
   );
