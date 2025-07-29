@@ -148,20 +148,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       publishedTime: post.date,
       authors: [post.author],
       url: `${baseUrl}/posts/${slug}`,
-      images: [
-        {
-          url: `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}&excerpt=${encodeURIComponent(post.excerpt)}`,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        }
-      ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       title: post.title,
       description: post.excerpt,
-      images: [`${baseUrl}/api/og?title=${encodeURIComponent(post.title)}&excerpt=${encodeURIComponent(post.excerpt)}`],
     },
   };
 }
