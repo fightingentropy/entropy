@@ -1,4 +1,6 @@
-export const typewriterQuotes = [
+import { quotes } from './quotes';
+
+const baseTypewriterQuotes = [
   "Man cannot remake himself without suffering, for he is both the marble and the sculptor. - Alexis Carrell",
   "I like putting all my eggs in one basket and then watching the basket very carefully. - Stanley Druckenmiller",
   "The people you most want to impress can read your intentions. - Naval",
@@ -74,5 +76,13 @@ export const typewriterQuotes = [
   "Winning cures everything but losing exposes everything.",
   "They have ears, but they will not hear. They have eyes, but they will not see.",
   "Just as real events are forgotten, some that never were can be in our memories as if they happened.",
-  "Privatise gains, socialise losses."
-]; 
+  "Privatise gains, socialise losses.",
+  "you can change an entire timeline just by sending a risky text or talking to a stranger. you need to be playing with the fabric of reality. - @CarlisleDiana"
+];
+
+const structuredQuotesAsStrings = quotes.map(q => `${q.content}${q.author ? ` - ${q.author}` : ''}`);
+
+export const typewriterQuotes = Array.from(new Set<string>([
+  ...baseTypewriterQuotes,
+  ...structuredQuotesAsStrings,
+]));

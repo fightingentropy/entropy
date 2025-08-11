@@ -731,5 +731,9 @@ export const quotes: Quote[] = [
   {
     content: "Work Life Balance.",
     author: "Unknown"
+  },
+  {
+    content: "you can change an entire timeline just by sending a risky text or talking to a stranger. you need to be playing with the fabric of reality.",
+    author: "CarlisleDiana"
   }
 ];
