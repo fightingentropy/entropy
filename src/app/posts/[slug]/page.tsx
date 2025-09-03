@@ -130,8 +130,8 @@ async function getPostData(slug: string) {
 }
 
 // Generate metadata for Open Graph sharing
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const post = await getPostData(slug);
   
   if (!post) {
@@ -166,8 +166,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 // The page component
-export default async function Page({ params }: { params: { slug: string } }) {
-  const post = await getPostData(params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPostData(slug);
   
   if (!post) {
     notFound();
