@@ -20,7 +20,8 @@ export default function TypewriterQuote({
   const [isDeleting, setIsDeleting] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-  const currentQuote = typewriterQuotes[currentQuoteIndex];
+  // Normalize newlines so strings containing literal "\n" render as line breaks
+  const currentQuote = typewriterQuotes[currentQuoteIndex]?.replace(/\\n/g, "\n");
 
   const getRandomQuoteIndex = useCallback(() => {
     let newIndex;
@@ -99,6 +100,7 @@ export default function TypewriterQuote({
           maxWidth: '800px',
           margin: '0 auto',
           padding: '0 2rem',
+          whiteSpace: 'pre-line',
         }}
       >
         {displayText}
