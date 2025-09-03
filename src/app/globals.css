@@ -71,6 +71,13 @@ html.dark {
   color-scheme: dark;
 }
 
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Prose styles for article content */
 .prose {
   max-width: 680px;

@@ -30,7 +30,11 @@ export default async function Home() {
   // Filter out private posts and sort by date
   const publicPosts = posts
     .filter(post => !post.private)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort((a, b) => {
+      const aTime = a.date ? new Date(a.date).getTime() : 0;
+      const bTime = b.date ? new Date(b.date).getTime() : 0;
+      return bTime - aTime;
+    });
 
   return (
     <>
@@ -48,7 +52,7 @@ export default async function Home() {
             paddingBottom: '1.5rem',
             marginBottom: '1.5rem',
           }}>
-            <Link href={`/posts/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link href={`/posts/${post.slug}`} prefetch={false} style={{ textDecoration: 'none', color: 'inherit' }}>
               <h2 style={{ 
                 fontSize: '1.4rem', 
                 fontWeight: 600, 

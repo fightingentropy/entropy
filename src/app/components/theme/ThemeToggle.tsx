@@ -28,6 +28,8 @@ export function ThemeToggle() {
         cursor: 'pointer',
         color: 'var(--foreground)',
       }}
+      aria-pressed={theme === 'dark'}
+      aria-label="Toggle theme"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

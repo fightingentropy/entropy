@@ -1,14 +1,72 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import * as React from 'react';
+import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "./theme/ThemeToggle";
 
 export default function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<Array<HTMLAnchorElement | null>>([]);
   
   const closeMenu = () => {
     setIsOpen(false);
+  };
+  
+  // Close on outside click
+  useEffect(() => {
+    if (!isOpen) return;
+    const handlePointerDown = (e: PointerEvent) => {
+      const target = e.target as Node | null;
+      if (target && !menuRef.current?.contains(target) && !buttonRef.current?.contains(target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('pointerdown', handlePointerDown);
+    return () => document.removeEventListener('pointerdown', handlePointerDown);
+  }, [isOpen]);
+
+  // Focus management
+  useEffect(() => {
+    if (isOpen) {
+      const first = itemRefs.current[0];
+      first?.focus();
+    } else {
+      buttonRef.current?.focus();
+    }
+  }, [isOpen]);
+
+  const onMenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      setIsOpen(false);
+      return;
+    }
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      const items = itemRefs.current.filter(Boolean) as HTMLAnchorElement[];
+      if (items.length === 0) return;
+      const currentIndex = items.findIndex((el) => el === document.activeElement);
+      const delta = e.key === 'ArrowDown' ? 1 : -1;
+      const nextIndex = (currentIndex + delta + items.length) % items.length;
+      items[nextIndex]?.focus();
+      return;
+    }
+    if (e.key === 'Tab') {
+      const items = itemRefs.current.filter(Boolean) as HTMLAnchorElement[];
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      } else if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    }
   };
   
   return (
@@ -17,6 +75,7 @@ export default function NavMenu() {
       <div style={{ position: 'relative' }}>
         {/* Hamburger button */}
         <button 
+          ref={buttonRef}
           onClick={() => setIsOpen(!isOpen)} 
           style={{
             background: 'none',
@@ -31,6 +90,17 @@ export default function NavMenu() {
             outline: 'none'
           }}
           aria-label="Toggle navigation menu"
+          aria-haspopup="menu"
+          aria-expanded={isOpen}
+          aria-controls="main-menu"
+          onKeyDown={(e) => {
+            if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              setIsOpen(true);
+              // focus first item on open via button
+              setTimeout(() => itemRefs.current[0]?.focus(), 0);
+            }
+          }}
         >
           <span style={{
             display: 'block',
@@ -60,7 +130,14 @@ export default function NavMenu() {
         
         {/* Dropdown menu */}
         {isOpen && (
-          <div style={{
+          <div 
+            ref={menuRef}
+            id="main-menu"
+            role="menu"
+            aria-orientation="vertical"
+            tabIndex={-1}
+            onKeyDown={onMenuKeyDown}
+            style={{
             position: 'absolute',
             top: '100%',
             right: 0,
@@ -76,6 +153,9 @@ export default function NavMenu() {
             <Link 
               href="/about" 
               onClick={closeMenu}
+              prefetch={false}
+              role="menuitem"
+              ref={(el) => { itemRefs.current[0] = el }}
               style={{
                 display: 'block',
                 padding: '1.25rem 1.75rem',
@@ -90,6 +170,9 @@ export default function NavMenu() {
             <Link 
               href="/ai" 
               onClick={closeMenu}
+              prefetch={false}
+              role="menuitem"
+              ref={(el) => { itemRefs.current[1] = el }}
               style={{
                 display: 'block',
                 padding: '1.25rem 1.75rem',
@@ -104,6 +187,9 @@ export default function NavMenu() {
             <Link 
               href="/tweets" 
               onClick={closeMenu}
+              prefetch={false}
+              role="menuitem"
+              ref={(el) => { itemRefs.current[2] = el }}
               style={{
                 display: 'block',
                 padding: '1.25rem 1.75rem',
@@ -118,6 +204,9 @@ export default function NavMenu() {
             <Link 
               href="/quotes" 
               onClick={closeMenu}
+              prefetch={false}
+              role="menuitem"
+              ref={(el) => { itemRefs.current[3] = el }}
               style={{
                 display: 'block',
                 padding: '1.25rem 1.75rem',
@@ -131,6 +220,17 @@ export default function NavMenu() {
           </div>
         )}
       </div>
+      <style jsx>{`
+        button:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+          border-radius: 6px;
+        }
+        a:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: -2px;
+        }
+      `}</style>
     </div>
   );
 } 

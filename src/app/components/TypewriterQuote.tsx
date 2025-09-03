@@ -18,6 +18,7 @@ export default function TypewriterQuote({
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   const currentQuote = typewriterQuotes[currentQuoteIndex];
 
@@ -29,10 +30,28 @@ export default function TypewriterQuote({
     return newIndex;
   }, [currentQuoteIndex]);
 
+  // Detect reduced motion preference
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setPrefersReducedMotion(mediaQuery.matches);
+    update();
+    mediaQuery.addEventListener?.('change', update);
+    return () => mediaQuery.removeEventListener?.('change', update);
+  }, []);
+
   useEffect(() => {
     if (!currentQuote) return;
 
     let timeoutId: NodeJS.Timeout;
+
+    // If user prefers reduced motion, render the full quote without animation
+    if (prefersReducedMotion) {
+      setDisplayText(currentQuote);
+      setIsTyping(false);
+      setIsDeleting(false);
+      return () => {};
+    }
 
     if (isTyping && !isDeleting) {
       // Typing forward
@@ -64,7 +83,7 @@ export default function TypewriterQuote({
     }
 
     return () => clearTimeout(timeoutId);
-  }, [displayText, currentQuote, isTyping, isDeleting, typingSpeed, pauseDuration, getRandomQuoteIndex]);
+  }, [displayText, currentQuote, isTyping, isDeleting, typingSpeed, pauseDuration, getRandomQuoteIndex, prefersReducedMotion]);
 
   return (
     <div className={`typewriter-container ${className}`}>
@@ -109,6 +128,11 @@ export default function TypewriterQuote({
         
         .typewriter-text {
           font-family: var(--font-geist-mono, monospace);
+        }
+
+        /* Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+          .cursor { animation: none; border-color: var(--foreground); }
         }
       `}</style>
     </div>

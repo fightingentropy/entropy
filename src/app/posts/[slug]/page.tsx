@@ -111,6 +111,10 @@ async function getPostData(slug: string) {
     // Style images in the content
     contentHtml = styleImages(contentHtml);
     
+    // Compute reading time (~225 words per minute)
+    const wordCount = content.trim().split(/\s+/).length;
+    const readingTimeMinutes = Math.max(1, Math.round(wordCount / 225));
+    
     return {
       title: data.title,
       date: data.date,
@@ -118,6 +122,7 @@ async function getPostData(slug: string) {
       content: contentHtml,
       private: data.private || false,
       excerpt: data.excerpt || `Read ${data.title} on Entropy blog`,
+      readingTimeMinutes,
     };
   } catch {
     notFound();
@@ -125,8 +130,8 @@ async function getPostData(slug: string) {
 }
 
 // Generate metadata for Open Graph sharing
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params;
   const post = await getPostData(slug);
   
   if (!post) {
@@ -141,6 +146,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.title,
     description: post.excerpt,
     authors: [{ name: post.author }],
+    alternates: {
+      canonical: `/posts/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -158,9 +166,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 // The page component
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const post = await getPostData(resolvedParams.slug);
+export default async function Page({ params }: { params: { slug: string } }) {
+  const post = await getPostData(params.slug);
   
   if (!post) {
     notFound();
@@ -229,6 +236,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <time dateTime={post.date}>
               {formatDate(post.date)}
             </time>
+            <span style={{ margin: '0 0.5rem' }}>•</span>
+            <span>{post.readingTimeMinutes} min read</span>
           </div>
         </header>
         

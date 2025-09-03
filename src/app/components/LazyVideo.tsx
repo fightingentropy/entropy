@@ -154,6 +154,8 @@ export default function LazyVideo({
               onLoadedData={handleVideoLoad}
               onError={handleVideoError}
               aria-label={`Video: ${title}`}
+              playsInline
+              muted
             >
               <source src={src} type="video/mp4" />
               Your browser does not support the video tag.
