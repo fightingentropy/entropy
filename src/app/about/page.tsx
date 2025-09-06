@@ -14,6 +14,19 @@ export default function AboutPage() {
       <p style={{ fontSize: '1.3rem', opacity: 0.8, textAlign: 'center', maxWidth: 600, lineHeight: 1.6 }}>
         In a world of constant change, entropy is unavoidable. This blog embraces the chaos, finding clarity in complexity and meaning in disorder. Here, we explore ideas that challenge the expected and celebrate the unpredictable nature of technology, design, and human experience.
       </p>
+      <div style={{ width: '100%', marginTop: '2rem' }}>
+        <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)' }}>
+          <iframe 
+            src="https://www.youtube.com/embed/MouQIGXpcLg" 
+            title="YouTube video player"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
       <p style={{ marginTop: '2rem', fontSize: '1.2rem', textAlign: 'center' }}>
         Follow me <a href="https://x.com/entropyholdings" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3em', textDecoration: 'none', color: 'inherit' }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 120 120" style={{ display: 'block', background: '#1a232a', borderRadius: '6px', alignSelf: 'center', flexShrink: 0, marginTop: '8px' }}>
