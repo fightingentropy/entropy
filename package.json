@@ -2,6 +2,10 @@
   "name": "entropy-blog",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "bun@1.2.21",
+  "engines": {
+    "bun": ">=1.2.0"
+  },
   "dependencies": {
     "@vercel/analytics": "1.5.0",
     "gray-matter": "4.0.3",
@@ -20,6 +24,7 @@
     "@types/node": "24.3.1",
     "@types/react": "19.1.12",
     "@types/react-dom": "19.1.9",
+    "bun-types": "^1.2.21",
     "eslint": "9.35.0",
     "eslint-config-next": "15.5.2",
     "typescript": "5.9.2"

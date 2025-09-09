@@ -6,18 +6,18 @@ Website: [fightingentropy.org](https://fightingentropy.org)
 
 ## Getting Started
 
-Run the development server:
+Run the development server (Bun):
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
-Run the production build:
+Run the production build (Bun):
 
 ```bash
-npm run build
-npm start
+bun run build
+bun run start
 ```
 
 ## Writing Articles
