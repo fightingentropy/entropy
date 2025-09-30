@@ -1,4 +1,4 @@
-# entropy-blog
+# entropy
 
 A minimal blog built with Next.js.
 
