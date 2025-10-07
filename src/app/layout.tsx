@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 import Link from "next/link";
+import Image from "next/image";
 import NavMenu from "./components/NavMenu";
 import { ThemeProvider } from "./components/theme/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
@@ -120,8 +121,20 @@ export default function RootLayout({
                 letterSpacing: "-0.02em",
                 color: "var(--foreground)",
                 textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
               }}
             >
+              <Image
+                src="/icon.png"
+                alt="Entropy Logo"
+                width={24}
+                height={24}
+                style={{
+                  filter: "invert(1)",
+                }}
+              />
               Entropy
             </Link>
             <NavMenu />

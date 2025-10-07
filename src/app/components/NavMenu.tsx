@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import * as React from 'react';
+import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "./theme/ThemeToggle";
 
@@ -10,22 +10,26 @@ export default function NavMenu() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Array<HTMLAnchorElement | null>>([]);
-  
+
   const closeMenu = () => {
     setIsOpen(false);
   };
-  
+
   // Close on outside click
   useEffect(() => {
     if (!isOpen) return;
     const handlePointerDown = (e: PointerEvent) => {
       const target = e.target as Node | null;
-      if (target && !menuRef.current?.contains(target) && !buttonRef.current?.contains(target)) {
+      if (
+        target &&
+        !menuRef.current?.contains(target) &&
+        !buttonRef.current?.contains(target)
+      ) {
         setIsOpen(false);
       }
     };
-    document.addEventListener('pointerdown', handlePointerDown);
-    return () => document.removeEventListener('pointerdown', handlePointerDown);
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
   }, [isOpen]);
 
   // Focus management
@@ -39,22 +43,24 @@ export default function NavMenu() {
   }, [isOpen]);
 
   const onMenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       e.preventDefault();
       setIsOpen(false);
       return;
     }
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
       e.preventDefault();
       const items = itemRefs.current.filter(Boolean) as HTMLAnchorElement[];
       if (items.length === 0) return;
-      const currentIndex = items.findIndex((el) => el === document.activeElement);
-      const delta = e.key === 'ArrowDown' ? 1 : -1;
+      const currentIndex = items.findIndex(
+        (el) => el === document.activeElement,
+      );
+      const delta = e.key === "ArrowDown" ? 1 : -1;
       const nextIndex = (currentIndex + delta + items.length) % items.length;
       items[nextIndex]?.focus();
       return;
     }
-    if (e.key === 'Tab') {
+    if (e.key === "Tab") {
       const items = itemRefs.current.filter(Boolean) as HTMLAnchorElement[];
       if (items.length === 0) return;
       const first = items[0];
@@ -68,33 +74,32 @@ export default function NavMenu() {
       }
     }
   };
-  
+
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <ThemeToggle />
-      <div style={{ position: 'relative' }}>
+    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+      <div style={{ position: "relative" }}>
         {/* Hamburger button */}
-        <button 
+        <button
           ref={buttonRef}
-          onClick={() => setIsOpen(!isOpen)} 
+          onClick={() => setIsOpen(!isOpen)}
           style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: '8px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            height: '28px',
-            width: '36px',
-            outline: 'none'
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: "8px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "28px",
+            width: "36px",
+            outline: "none",
           }}
           aria-label="Toggle navigation menu"
           aria-haspopup="menu"
           aria-expanded={isOpen}
           aria-controls="main-menu"
           onKeyDown={(e) => {
-            if (e.key === 'ArrowDown') {
+            if (e.key === "ArrowDown") {
               e.preventDefault();
               setIsOpen(true);
               // focus first item on open via button
@@ -102,35 +107,43 @@ export default function NavMenu() {
             }
           }}
         >
-          <span style={{
-            display: 'block',
-            height: '3px',
-            width: '100%',
-            background: 'var(--foreground)',
-            transition: 'transform 0.3s ease',
-            transform: isOpen ? 'rotate(45deg) translate(7px, 7px)' : 'none'
-          }}></span>
-          <span style={{
-            display: 'block',
-            height: '3px',
-            width: '100%',
-            background: 'var(--foreground)',
-            opacity: isOpen ? 0 : 1,
-            transition: 'opacity 0.3s ease'
-          }}></span>
-          <span style={{
-            display: 'block',
-            height: '3px',
-            width: '100%',
-            background: 'var(--foreground)',
-            transition: 'transform 0.3s ease',
-            transform: isOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none'
-          }}></span>
+          <span
+            style={{
+              display: "block",
+              height: "3px",
+              width: "100%",
+              background: "var(--foreground)",
+              transition: "transform 0.3s ease",
+              transform: isOpen ? "rotate(45deg) translate(7px, 7px)" : "none",
+            }}
+          ></span>
+          <span
+            style={{
+              display: "block",
+              height: "3px",
+              width: "100%",
+              background: "var(--foreground)",
+              opacity: isOpen ? 0 : 1,
+              transition: "opacity 0.3s ease",
+            }}
+          ></span>
+          <span
+            style={{
+              display: "block",
+              height: "3px",
+              width: "100%",
+              background: "var(--foreground)",
+              transition: "transform 0.3s ease",
+              transform: isOpen
+                ? "rotate(-45deg) translate(7px, -7px)"
+                : "none",
+            }}
+          ></span>
         </button>
-        
+
         {/* Dropdown menu */}
         {isOpen && (
-          <div 
+          <div
             ref={menuRef}
             id="main-menu"
             role="menu"
@@ -138,85 +151,107 @@ export default function NavMenu() {
             tabIndex={-1}
             onKeyDown={onMenuKeyDown}
             style={{
-            position: 'absolute',
-            top: '100%',
-            right: 0,
-            marginTop: '0.75rem',
-            background: 'var(--background)',
-            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-            borderRadius: '4px',
-            overflow: 'hidden',
-            zIndex: 1000,
-            minWidth: '180px',
-            border: '1px solid var(--foreground-alpha)'
-          }}>
-            <Link 
-              href="/about" 
+              position: "absolute",
+              top: "100%",
+              right: 0,
+              marginTop: "0.75rem",
+              background: "var(--background)",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+              borderRadius: "4px",
+              overflow: "hidden",
+              zIndex: 1000,
+              minWidth: "180px",
+              border: "1px solid var(--foreground-alpha)",
+            }}
+          >
+            <Link
+              href="/about"
               onClick={closeMenu}
               prefetch={false}
               role="menuitem"
-              ref={(el) => { itemRefs.current[0] = el }}
+              ref={(el) => {
+                itemRefs.current[0] = el;
+              }}
               style={{
-                display: 'block',
-                padding: '1.25rem 1.75rem',
-                color: 'var(--foreground)',
-                textDecoration: 'none',
-                borderBottom: '1px solid var(--foreground-alpha)',
-                fontSize: '1.1rem'
+                display: "block",
+                padding: "1.25rem 1.75rem",
+                color: "var(--foreground)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--foreground-alpha)",
+                fontSize: "1.1rem",
               }}
             >
               About
             </Link>
-            <Link 
-              href="/ai" 
+            <Link
+              href="/ai"
               onClick={closeMenu}
               prefetch={false}
               role="menuitem"
-              ref={(el) => { itemRefs.current[1] = el }}
+              ref={(el) => {
+                itemRefs.current[1] = el;
+              }}
               style={{
-                display: 'block',
-                padding: '1.25rem 1.75rem',
-                color: 'var(--foreground)',
-                textDecoration: 'none',
-                borderBottom: '1px solid var(--foreground-alpha)',
-                fontSize: '1.1rem'
+                display: "block",
+                padding: "1.25rem 1.75rem",
+                color: "var(--foreground)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--foreground-alpha)",
+                fontSize: "1.1rem",
               }}
             >
               AI
             </Link>
-            <Link 
-              href="/tweets" 
+            <Link
+              href="/tweets"
               onClick={closeMenu}
               prefetch={false}
               role="menuitem"
-              ref={(el) => { itemRefs.current[2] = el }}
+              ref={(el) => {
+                itemRefs.current[2] = el;
+              }}
               style={{
-                display: 'block',
-                padding: '1.25rem 1.75rem',
-                color: 'var(--foreground)',
-                textDecoration: 'none',
-                borderBottom: '1px solid var(--foreground-alpha)',
-                fontSize: '1.1rem'
+                display: "block",
+                padding: "1.25rem 1.75rem",
+                color: "var(--foreground)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--foreground-alpha)",
+                fontSize: "1.1rem",
               }}
             >
               Tweets
             </Link>
-            <Link 
-              href="/quotes" 
+            <Link
+              href="/quotes"
               onClick={closeMenu}
               prefetch={false}
               role="menuitem"
-              ref={(el) => { itemRefs.current[3] = el }}
+              ref={(el) => {
+                itemRefs.current[3] = el;
+              }}
               style={{
-                display: 'block',
-                padding: '1.25rem 1.75rem',
-                color: 'var(--foreground)',
-                textDecoration: 'none',
-                fontSize: '1.1rem'
+                display: "block",
+                padding: "1.25rem 1.75rem",
+                color: "var(--foreground)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--foreground-alpha)",
+                fontSize: "1.1rem",
               }}
             >
               Quotes
             </Link>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "1.25rem 1.75rem",
+                fontSize: "1.1rem",
+              }}
+            >
+              <span style={{ color: "var(--foreground)" }}>Theme</span>
+              <ThemeToggle />
+            </div>
           </div>
         )}
       </div>
@@ -233,4 +268,4 @@ export default function NavMenu() {
       `}</style>
     </div>
   );
-} 
+}
