@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 import Link from "next/link";
 import NavMenu from "./components/NavMenu";
 import { ThemeProvider } from "./components/theme/ThemeProvider";
-import { Analytics } from '@vercel/analytics/next';
-import Script from 'next/script';
+import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 // Client-side URL cleaner using Next Script
 function URLCleaner() {
@@ -46,7 +46,8 @@ function URLCleaner() {
   );
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://entropy-blog.vercel.app';
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || "https://entropy-blog.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -61,17 +62,17 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "Entropy",
     url: baseUrl,
-    type: 'website',
+    type: "website",
     title: "Entropy",
     description: "A minimalist blog exploring ideas in technology and design",
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@entropyholdings',
-    creator: '@entropyholdings',
+    card: "summary_large_image",
+    site: "@entropyholdings",
+    creator: "@entropyholdings",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
   },
   robots: {
     index: true,
@@ -80,11 +81,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
-    { media: '(prefers-color-scheme: light)', color: '#f9f9f9' },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#f9f9f9" },
   ],
 };
 
@@ -99,27 +100,28 @@ export default function RootLayout({
         <URLCleaner />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-        >
-          <nav style={{
-            width: '100%',
-            maxWidth: 900,
-            margin: '0 auto',
-            padding: '2rem 1rem 1.5rem 1rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}>
-            <Link href="/" style={{ 
-              fontWeight: 700, 
-              fontSize: '1.3rem', 
-              letterSpacing: '-0.02em', 
-              color: 'var(--foreground)',
-              textDecoration: 'none'
-            }}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <nav
+            style={{
+              width: "100%",
+              maxWidth: 900,
+              margin: "0 auto",
+              padding: "2rem 1rem 1.5rem 1rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Link
+              href="/"
+              style={{
+                fontWeight: 700,
+                fontSize: "1.3rem",
+                letterSpacing: "-0.02em",
+                color: "var(--foreground)",
+                textDecoration: "none",
+              }}
+            >
               Entropy
             </Link>
             <NavMenu />
