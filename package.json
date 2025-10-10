@@ -2,9 +2,8 @@
   "name": "entropy-blog",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "bun@1.2.21",
   "engines": {
-    "bun": ">=1.2.0"
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@vercel/analytics": "1.5.0",
