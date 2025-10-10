@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Static export: outputs fully static HTML to 'out' directory
+  // No server code - perfect for static hosting on Vercel, Netlify, etc.
+  output: "export",
   images: {
     formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
