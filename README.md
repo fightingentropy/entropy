@@ -16,8 +16,10 @@ Run the production build (Bun):
 
 ```bash
 bun run build
-bun run start
+bun run start # serves the static export from ./out
 ```
+
+The build emits a fully static site in the `out` directory. Deployments (including Vercel) should point to this folder as the output directory.
 
 ## Writing Articles
 

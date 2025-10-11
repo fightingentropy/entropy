@@ -28,7 +28,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "bunx serve out",
     "audit": "bun audit",
     "audit:fix": "bun audit --fix",
     "security-check": "bun audit && bun ci"
